@@ -2,7 +2,8 @@
     background-color: #ee9e93;
     padding-left:2rem;
     padding-right: 2em;
-    height: 100vh;
+    height: 82vh;
+    border-radius: 10px;
     box-sizing: border-box;
     overflow: auto;
 }

@@ -4,9 +4,23 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 function Footer(){
+
+       const [displayProperty,setDisplayProperty]=useState("block")
+  
+  const currentRoute=useLocation().pathname
+
+  useEffect(()=>{
+    if(currentRoute=="/login" || currentRoute=="/sign-up"){
+      setDisplayProperty("none")
+    }
+  },[])
+
     return(
-        <div className="footer-content">
+        <div className="footer-content" style={{display:displayProperty}}>
             <div className='footer-developer-content'>
             <h4>Fetchmate Developer</h4>
             <h6  >FetchMate is an innovative app connecting pet owners with trustworthy dog walkers

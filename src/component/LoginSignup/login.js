@@ -16,7 +16,7 @@ import {
 
 function Login(){
     return(
-       <MDBContainer className="bg-#AE775B my-4">
+       <MDBContainer className="bg-#AE775B my-4 d-flex justify-content-center align-items-center">
 
       <MDBCard>
         <MDBRow className='g-0'>
