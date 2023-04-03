@@ -49,6 +49,7 @@ const Signup = () => {
                           size="md"
                           id="form1"
                           type="text"
+                          required
                         />
                       </MDBCol>
 
@@ -59,6 +60,7 @@ const Signup = () => {
                           size="md"
                           id="form2"
                           type="text"
+                          required
                         />
                       </MDBCol>
                     </MDBRow>
@@ -70,7 +72,7 @@ const Signup = () => {
                       id="form6"
                       type="email"
                     />
-
+  
                     <MDBInput
                       wrapperClass="mb-3"
                       label="Birthday"
@@ -164,7 +166,7 @@ const Signup = () => {
                       <MDBBtn color="light" size="md">
                         Reset all
                       </MDBBtn>
-                      <MDBBtn className="ms-2" color="warning" size="md">
+                      <MDBBtn className="ms-2" color="warning" size="md" type="submit">
                         Submit form
                       </MDBBtn>
                     </div>
