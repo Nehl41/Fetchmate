@@ -1,0 +1,17 @@
+.w-75{
+    background-color: #ee9e93;
+    padding-left:2rem;
+    padding-right: 2em;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.rounded-start{
+    height: 75%;
+    align-self: center;
+}
+
+#gif-bg{
+    background-color: #fcefe8 !important;
+}
