@@ -28,7 +28,7 @@ section{
     display: inline-block;
     margin-left: 2rem;
     font-family: 'Exo';
-    font-size: 20px;
+    font-size: 1.25rem;
     transition: all 0.6 ease;  
 }
 .nav_links a:hover{

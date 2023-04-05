@@ -20,7 +20,7 @@
     margin-left: 1.25rem;
     color: whitesmoke;
     font-family: Exo;
-    font-size: 10px;
+    font-size: 0.63rem;
     font-weight: 500;
     margin-bottom: 0.7vw;
     z-index: 2;
@@ -70,14 +70,14 @@
     background-color: rgba(245, 245, 220, 0.808);
     /* background-color: #006B5E;
     color: rgba(245, 245, 220, 0.808); */
-    padding: 7px 20px;
+    padding: 0.438rem 1.25rem;
     font-family: Exo;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     display: inline-block;
     position: relative;
-    margin-top: 35px;
+    margin-top: 2.188rem;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);;

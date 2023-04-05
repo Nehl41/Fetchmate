@@ -1,6 +1,7 @@
 import "./App.css";
 import Nav from "./component/Navbar/Nav.js";
 import Header from "./component/Header/Header.js";
+import PetParent from "./component/PetParent/PetParent.js";
 import Login from "./component/LoginSignup/login.js";
 import Signup from "./component/LoginSignup/Signup.js";
 import Footer from "./component/Footer/footer.js";
@@ -22,12 +23,13 @@ function App() {
   return (
     <>
       <Nav />
-      P{loading?<Loader/>:(<Routes>
+      <PetParent/>
+      {/* {loading?<Loader/>:(<Routes>
         <Route path="/" element={<Header />}></Route>
         <Route path="/sign-up" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>)}
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

@@ -1,0 +1,13 @@
+.parent-container{
+    display: flex;
+    flex-direction: row;
+
+}
+.lefthand{
+    flex: 1;
+    background-color: blue;
+}
+.righthand{
+    flex: 2;
+    background-color: blueviolet;
+}

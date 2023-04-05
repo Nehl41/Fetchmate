@@ -36,7 +36,6 @@ const Nav = () => {
             </div>
           </div>
           <div className="nav_right">
-            {/* <SearchIcon fontSize="medium" /> */}
             <input
               className="Search_bar"
               type="search"
