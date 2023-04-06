@@ -2,7 +2,7 @@ import React from "react";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import lovegif from '../../Image/petlover.gif'
+import lovegif from '../../assets/Image/petlover.gif'
 import './Signup.css';
 import {
     MDBBtn,

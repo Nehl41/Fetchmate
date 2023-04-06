@@ -1,12 +1,14 @@
 import * as React from 'react';
+
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ParentImg from '../../Image/CardParent1.jpg';
-import LoverImg from '../../Image/CardLover.jpg'
+
+import ParentImg from '../../../assets/Image/CardParent1.jpg';
+import LoverImg from '../../../assets/Image/CardLover.jpg'
 
 function RoleCard() {
   return (

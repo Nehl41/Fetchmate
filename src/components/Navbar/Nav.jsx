@@ -1,10 +1,11 @@
 import "./Nav.css";
-import fmlogo from "../../Image/logo-color.png";
+
+import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
+
 import { Stack } from "@mui/system";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [displaySignup, setDisplaySignup] = useState("inline");
@@ -32,7 +33,7 @@ const Nav = () => {
               <a href="">Pet Parent</a>
               <a href="">Pet lover</a>
               <a href="">Service</a>
-              <a href="">About us</a>
+              <a href="/about-us">About us</a>
             </div>
           </div>
           <div className="nav_right">

@@ -1,10 +1,10 @@
-import "./Header.css";
+import "./HomePage.css";
 import Button from "@mui/material/Button";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import Card from "./Card.js";
-import RoleCard from "./RoleCard";
+import Card from "./Card/Card";
+import RoleCard from "./Card/RoleCard";
 
-const Header = () => {
+const HomePage = () => {
   return (
     <header>
       <div className="header-content">
@@ -37,10 +37,8 @@ const Header = () => {
         <Card/>
         <button className="aboutus">Know More About Us <InfoOutlinedIcon fontSize="medium"/> </button>
       </div>
-
-
     </header>
   );
 };
 
-export default Header;
+export default HomePage;

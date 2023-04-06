@@ -1,6 +1,9 @@
 import React from "react";
-import fmlogo from '../../Image/logo-color.png';
+
+import fmlogo from '../../assets/Image/logo-color.png';
+
 import './login.css';
+
 import {
     MDBBtn,
     MDBContainer,

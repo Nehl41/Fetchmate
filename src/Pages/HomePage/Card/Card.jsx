@@ -1,13 +1,18 @@
 import './Card.css';
+
 import * as React from 'react';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import card1img from '../../Image/card1img.jpg'
-import card2img from '../../Image/card2img.jpg'
-import card3img from '../../Image/finalimg3.jpg'
+
+import card1img from '../../../assets/Image/card1img.jpg'
+import card2img from '../../../assets/Image/card2img.jpg'
+import card3img from '../../../assets/Image/finalimg3.jpg'
+
+
 
 const card = () => {
     return(
