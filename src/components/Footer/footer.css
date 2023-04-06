@@ -1,6 +1,6 @@
 .footer-content{
     background-color: rgb(22, 22, 22); 
-    padding: 20px;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,14 +12,12 @@
     max-width: 50%;
 }
 
-
-
 .footer-developer-profile {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 0.94rem;
     width: 75%;
 }
 
@@ -33,8 +31,15 @@
 }
 
 .footer-socialmedia-links{
-    margin-top: 12px;
-    display: flex;
-    justify-content: space-around;
+    margin-top: 0.75rem;
+    display: flex;    justify-content: space-around;
     gap: 10px;
 }
+
+.footer-socialmedia-links >a {
+    color: #4f4f4f;
+}
+
+.footer-socialmedia-links >a :hover{
+    color:#F7D65A;
+} 
