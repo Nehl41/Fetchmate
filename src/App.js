@@ -32,12 +32,11 @@ function App() {
     <>
       <Nav />
       {loading?<Loader/>:(<Routes>
-        <Route path="/" element={<HomePage/>}></Route>
+        <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
         <Route path="/sign-up" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/about-us" element={<AboutUs/>}></Route>
       </Routes>)}
-      <Footer /> 
     </>
   );
 }

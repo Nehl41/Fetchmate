@@ -1,0 +1,25 @@
+.creator-details{
+    clip-path: polygon(100% 100%, 0% 100% , 0.00% 25.00%, 2.00% 22.35%, 4.00% 20.36%, 6.00% 19.51%, 8.00% 20.02%, 10.00% 21.77%, 12.00% 24.31%, 14.00% 27.02%, 16.00% 29.24%, 18.00% 30.40%, 20.00% 30.23%, 22.00% 28.77%, 24.00% 26.37%, 26.00% 23.63%, 28.00% 21.23%, 30.00% 19.77%, 32.00% 19.60%, 34.00% 20.76%, 36.00% 22.98%, 38.00% 25.69%, 40.00% 28.23%, 42.00% 29.98%, 44.00% 30.49%, 46.00% 29.64%, 48.00% 27.65%, 50.00% 25.00%, 52.00% 22.35%, 54.00% 20.36%, 56.00% 19.51%, 58.00% 20.02%, 60.00% 21.77%, 62.00% 24.31%, 64.00% 27.02%, 66.00% 29.24%, 68.00% 30.40%, 70.00% 30.23%, 72.00% 28.77%, 74.00% 26.37%, 76.00% 23.63%, 78.00% 21.23%, 80.00% 19.77%, 82.00% 19.60%, 84.00% 20.76%, 86.00% 22.98%, 88.00% 25.69%, 90.00% 28.23%, 92.00% 29.98%, 94.00% 30.49%, 96.00% 29.64%, 98.00% 27.65%, 100.00% 25.00%);
+    background-image: url('https://img.freepik.com/premium-vector/animal-cartoon-vector-seamless-pattern-with-pet-design-elements-dog-bone-paw-print-icon_364586-716.jpg'),linear-gradient(to bottom,grey,black);
+    height: 70%;
+    overflow-y: visible;
+    padding:3rem;
+    
+}
+
+.about-us-wrapper{
+    height: 88vh;
+    overflow: visible;
+}
+
+.creator-details{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: visible;
+}
+.founder-card{
+    overflow: visible;
+    transform: rotateZ(-10deg);
+    border-radius: 50px;    
+}
