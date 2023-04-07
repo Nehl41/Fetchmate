@@ -12,7 +12,7 @@ const HomePage = () => {
           <header className='homepage' ></header>
         </div>
         <div className="header_desc"> 
-        <h1 style={{fontWeight: 800}}>Don't wanna leave your furry friend behind ?</h1>
+        <h1>Don't wanna leave your furry friend behind ?</h1>
         <h5>Let Fetchmate put your worries to rest. We'll pamper your <br/>pet like family, so you can travel with peace of mind."</h5>
         <h6> Join us now and let your pet's adventure begin.</h6>
         </div>

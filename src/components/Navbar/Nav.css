@@ -3,7 +3,7 @@
     height: 12vh;
     position: sticky;
     z-index: 1000;
-    font-size: 0.9rem;
+    font-size: 1vw;
 }
 
 section{
@@ -28,7 +28,7 @@ section{
     display: inline-block;
     margin-left: 2rem;
     font-family: 'Exo';
-    font-size: 1.25rem;
+    font-size: 1.5vw;
     transition: all 0.6 ease;  
 }
 .nav_links a:hover{

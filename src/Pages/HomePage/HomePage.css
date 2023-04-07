@@ -1,12 +1,10 @@
 .homepage{
-    /* background-image:url(https://www.hdwallpapers.in/download/corgi_pet_dog_is_sitting_on_wooden_bench_4k_5k_hd_animals-5120x2880.jpg);     */
     background-image: url(../../assets/Image/corgi_pet_dog_is_sitting_on_wooden_bench_4k_5k_hd_animals-5120x2880.jpg);
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: inset 0px 7px 3px -3px rgba(50,50,50,0.75);
-
 }
 
 .header_content{
@@ -29,6 +27,13 @@
     left: 3%;
 }
 
+.header_desc h1{
+    font-weight: 600;
+    font-size:3vw;
+}
+.header_desc h5,h6{
+    font-size:1.3vw;
+}
 
 .letstry{
     z-index: 2;
