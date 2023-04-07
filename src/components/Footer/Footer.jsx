@@ -1,5 +1,5 @@
 import './footer.css';
-import NehalImg from './developerImg/Nehal.jpg'
+import NehalImg from '../../assets/Image/CardParent.jpg'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
