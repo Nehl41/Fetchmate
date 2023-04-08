@@ -11,6 +11,9 @@ import AboutUs from './Pages/AboutUs/AboutUs'
 import Nav from "./components/Navbar/Nav";
 import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
+import OurGoal from "./components/ourGoal/OurGoal";
+import Faqs from './components/Faqs/Faqs'
+import Developers from "./components/developers/Developers";
 
 // Libraries and Package Imports
 import { Route, Routes } from "react-router-dom";
@@ -31,12 +34,18 @@ function App() {
   return (
     <>
       <Nav />
+      <div className="main-content-app">
       {loading?<Loader/>:(<Routes>
         <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
         <Route path="/sign-up" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/about-us" element={<AboutUs/>}></Route>
+        <Route path="/about-us" element={<AboutUs/>}>
+          <Route path="def" element={<OurGoal/>} />
+          <Route path="faqs" element={<Faqs/>} />
+          <Route path="developers" element={<Developers/>} />
+        </Route>
       </Routes>)}
+      </div>
     </>
   );
 }

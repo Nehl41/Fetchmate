@@ -33,7 +33,7 @@ const Nav = () => {
               <a href="">Pet Parent</a>
               <a href="">Pet lover</a>
               <a href="">Service</a>
-              <a href="/about-us">About us</a>
+              <a href="/about-us/def">About us</a>
             </div>
           </div>
           <div className="nav_right">

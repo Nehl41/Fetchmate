@@ -1,12 +1,13 @@
 import './Card.css'
 
-import {Card,CardActionArea,Typography,CardContent,CardMedia} from '@mui/material'
+import {Card,CardActionArea,Typography,CardContent,CardMedia, CardActions,Button} from '@mui/material'
+import { LinkedIn,Instagram,Mail } from '@mui/icons-material';
 
-const FounderCard=({cardImage,cardTitle,cardDescription}) => {
+const FounderCard=({cardImage,cardTitle,cardDescription,linkedInLink,instagramLink}) => {
     return(
         <Card sx={{ maxWidth: 400}}>
         <CardActionArea sx={{minHeight:500}}>
-          <CardMedia
+          <CardMedia sx={{maxHeight:400}}
             component="img"
             image={cardImage}
             alt="Adorable environment"
@@ -19,6 +20,10 @@ const FounderCard=({cardImage,cardTitle,cardDescription}) => {
             {cardDescription}
             </Typography>
           </CardContent>
+          <CardActions>
+            <Button href={linkedInLink} ><LinkedIn/></Button>
+            <Button href={instagramLink}><Instagram/></Button>
+          </CardActions>
         </CardActionArea>
       </Card>
     );

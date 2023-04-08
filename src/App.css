@@ -4,4 +4,9 @@
 
 body{
   background-color: #f2f2f2;
+  height: 100vh;
+}
+
+.main-content-app{
+  height: 80vh;
 }
