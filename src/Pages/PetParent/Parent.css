@@ -1,14 +1,27 @@
 .parent-header{
     display: flex;
     justify-content: center;
+    padding: 2rem;
+    justify-content:space-around;
+    /* background-image: url(https://img.freepik.com/premium-photo/grunge-background-with-space-text-image_196038-5128.jpg?w=2000); */
 }
 
-.parent-header-content{}
+.parent-header-content{
+    color: black;
+    font-family: Exo;
+    height: fit-content;
+    width: 45%;
+    margin-top: 7%;
+    margin-left: 4%;
+    /* padding-top: 7%; */
+}
+.parent-header-content > h1{
+    color: #006B5E;
+}
 
 .parent-header-frame{
-    background-color: blueviolet;
-    max-width: 55vw;
-    max-height: 25vh;
+    max-width: 95vw;
+    max-height: 65vh;
 }
 
 .parent-header-frame > img{
