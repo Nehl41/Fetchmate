@@ -3,7 +3,7 @@ import "./Nav.css";
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
 
-import { Stack } from "@mui/system";
+import { Popover ,Stack,Item} from "@mui/material";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -13,6 +13,19 @@ const Nav = () => {
   const [displayLogin, setDisplayLogin] = useState("inline");
 
   const { pathname } = useLocation();
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
   useEffect(() => {
     console.log(pathname);
@@ -32,7 +45,24 @@ const Nav = () => {
               <a href="/">Home</a>
               <a href="">Pet Parent</a>
               <a href="">Pet lover</a>
-              <a href="">Service</a>
+              <span aria-describedby={id} onClick={handleClick}>Service</span>
+              <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorReference="anchorPosition"
+  anchorPosition={{ top: "100", left: 800 }}
+  anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'center',
+  }}
+  transformOrigin={{
+    vertical: 'top',
+    horizontal: 'center',
+  }}>
+              <Stack direction="row" spacing={2} sx={{height:"7rem",width:"40rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
+              <a href="/book-pet-sitting">Book Pet Sitting</a>
+              <a href="/book-pet-sitting">Book Pet Sitting</a>
+              <a href="/book-pet-sitting">Book Pet Sitting</a>
+              <a href="/book-pet-sitting">Book Pet Sitting</a>
+      </Stack>
+              </Popover>
               <a href="/about-us/def">About us</a>
             </div>
           </div>

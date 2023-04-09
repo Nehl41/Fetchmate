@@ -21,7 +21,7 @@ section{
     align-items: center;
 }
 
-.nav_links a {
+.nav_links a,span{
     color: black;
     text-decoration: none;
     position: relative;
@@ -29,9 +29,11 @@ section{
     margin-left: 2rem;
     font-family: 'Exo';
     font-size: 1.5vw;
-    transition: all 0.6 ease;  
+    transition: all 0.6 ease;
+    cursor: pointer;  
 }
-.nav_links a:hover{
+
+.nav_links a:hover,span:hover{
     color:#006B5E;
     border-bottom: 4px solid rgb(247, 214, 90);
 }

@@ -11,6 +11,9 @@
 .about-us-main-content{
     margin: 2rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .about-us-leftList{
     padding: 1rem;
