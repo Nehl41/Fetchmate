@@ -21,7 +21,7 @@ const FounderCard=({cardImage,cardTitle,cardDescription,linkedInLink,instagramLi
             </Typography>
           </CardContent>
           <CardActions>
-            <Button href={linkedInLink} ><LinkedIn/></Button>
+            <Button href={linkedInLink} sx={{padding: 0 }} ><LinkedIn/></Button>
             <Button href={instagramLink}><Instagram/></Button>
           </CardActions>
         </CardActionArea>
