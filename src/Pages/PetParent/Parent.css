@@ -1,0 +1,17 @@
+.parent-header{
+    display: flex;
+    justify-content: center;
+}
+
+.parent-header-content{}
+
+.parent-header-frame{
+    background-color: blueviolet;
+    max-width: 55vw;
+    max-height: 25vh;
+}
+
+.parent-header-frame > img{
+    height: 100%;
+    width: 100%;
+}
