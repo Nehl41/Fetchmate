@@ -1,0 +1,26 @@
+.pointer{
+    display: flex;
+    flex-direction: row;
+    margin: .7rem;
+}
+
+.pointerImg{   
+    height: 6.5rem;
+    width: 6.5rem;
+    padding: .4rem;
+    border: .4rem solid #F7D65A;
+    border-radius: 50%;
+    box-shadow: .7px .7px 3px 3px #5c5c5c;
+}
+
+.pointer h6{
+    text-align: justify;
+    margin-left: 1.5rem;
+    padding-left: .5rem;
+}
+.pointer h4{
+    text-align: justify;
+    margin-left: 2rem;
+    font-weight: bold;
+    padding-top: .5rem;
+}
