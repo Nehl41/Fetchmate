@@ -29,9 +29,9 @@ const Nav = () => {
 
   useEffect(() => {
     console.log(pathname);
-    if (pathname == "/login") setDisplayLogin("none");
+    if (pathname === "/login") setDisplayLogin("none");
     else setDisplayLogin("inline");
-    if (pathname == "/sign-up") setDisplaySignup("none");
+    if (pathname === "/sign-up") setDisplaySignup("none");
     else setDisplaySignup("inline");
   }, []);
 
@@ -43,8 +43,8 @@ const Nav = () => {
             <img className="logo" src={fmlogo} alt="fetchmateLogo"></img>
             <div className="nav_links">
               <a href="/">Home</a>
-              <a href="">Pet Parent</a>
-              <a href="">Pet lover</a>
+              <a href="/parent">Pet Parent</a>
+              <a href="/petlover">Pet lover</a>
               <span aria-describedby={id} onClick={handleClick}>Service</span>
               <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorReference="anchorPosition"
   anchorPosition={{ top: "100", left: 800 }}
