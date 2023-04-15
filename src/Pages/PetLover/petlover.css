@@ -1,54 +1,58 @@
-.container{
-    width: 1200px;
-    margin: 200px auto;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .timeline{
-    counter-reset: year 0;
-    position: relative;
-    width: 100vw;
-  }
-  
-  .timeline li{
-    list-style: none;
-    float: left;
-    width: 33.33%;
-    position: relative;
-    text-align: center;
-    padding-inline: 2.5rem;
-    text-transform:none;
-  }
+.lover-container{
+    font-family: Exo;
+    display: flex;
+    flex-direction: column;
+}
 
-  .timeline li:before{
-    counter-increment: year;
-    content: counter(year);
-    width: 50px;
-    height: 50px;
-    border: 3px solid #4C4637;
-    border-radius: 50%;
-    display: block;
+.wrapper-lover-header{
     text-align: center;
-    line-height: 50px;
-    margin: 0 auto 10px auto;
-    background: #F1F1F1;
-    color: #000;
-    transition: all ease-in-out .3s;
-    cursor: pointer;
-  }
-  
-  .timeline li:after{
-    content: "";
+    max-height: 80vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: auto;
+    margin: 3rem;
+}
+
+.lover-header{
+    background-color: rgb(5, 70, 48);
+    position: relative;
+    background-repeat: no-repeat;
+    height: 75vh;
+    width: 80vw;
+    background-size: cover;
+    background-clip: border-box;
+    background-image: url(https://images.ctfassets.net/4f3rgqwzdznj/4IPtB6YNbhB6VKcH5c5wwS/4ddf7ad3cc59e8af7bf18fad0f2f0156/golden_retriever_gray_cat-1027475322.jpg);
+    
+}
+
+.lover-header > h2{
+    color: black;
     position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color: grey;
-    top: 25px;
-    left: -50%;
-    z-index: -999;
-  }
-  
-  .timeline li:first-child:after{
-    content: none;
-  }
+    text-decoration: overline;
+    top: 15%;
+    left: 25%;
+    transform: translate(0,-25%);
+}
+
+.lover-header >h4{
+    color: black;
+    position: absolute;
+    top: 5%;
+    left: 29%;
+}
+
+.lover-header >h6{
+    color: black;
+    position: absolute;
+    top: 93%;
+    left: 60%;
+    transform: translate(-93%,-60%);
+    border: 2px solid black;
+    padding: .3rem;
+    border-radius: 15%;
+}
+
+.lover-header >h6:hover{
+    border: 3px solid #F7D65A;
+}
