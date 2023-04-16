@@ -46,7 +46,7 @@ const Nav = () => {
             <div className="nav_links">
               <a href="/">Home</a>
               <a href="/parent">Pet Parent</a>
-              <a href="">Pet lover</a>
+              <a href="/pet-lover">Pet lover</a>
               <span aria-describedby={id} onClick={handleClick}>Service</span>
               <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorReference="anchorPosition"
   anchorPosition={{ top: "100", left: 800 }}

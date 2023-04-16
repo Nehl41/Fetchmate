@@ -33,7 +33,7 @@ const Signup = () => {
     role: "r",
     sex: "",
   };
-  let navigate = useNavigate();
+  let navigate=useNavigate()
   const [formError, setFormError] = useState("JOIN US");
   const [user, setUser] = useState(defaultInputs);
 
@@ -243,10 +243,10 @@ const Signup = () => {
                           url: "http://localhost:3500/api/v1/user/add",
                           data: user,
                         })
-                          .then((response) => navigate("/login"))
-                          .catch((err) =>
-                            setFormError(err.response.data.message)
-                          );
+                          .then((response) =>
+                            navigate('/login')
+                          )
+                          .catch((err) => setFormError(err.response.data.message));
                       }}
                     >
                       Submit form

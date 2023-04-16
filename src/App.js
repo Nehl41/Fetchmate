@@ -40,7 +40,7 @@ function App() {
       {loading?<Loader/>:(<Routes>
         <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
         <Route path="/parent" element={<PetParent />}></Route>
-        <Route path="/petlover" element={<PetLover />}></Route>
+        <Route path="/pet-lover" element={<PetLover />}></Route>
         <Route path="/sign-up" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/about-us" element={<AboutUs/>}>
