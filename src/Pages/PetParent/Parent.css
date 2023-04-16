@@ -21,7 +21,7 @@
     margin-left: 4%;
 }
 
-.parent-header-content > h1{
+.parent-header-content-h1{
     color: #006B5E;
     text-decoration: underline #F7D65A;
 }
@@ -36,14 +36,6 @@
     flex-direction: row;
     height: 100%;
     width: 100%;
-}
-
-.parent-middle-container h4{
-    color: #006B5E;
-}
-
-.parent-middle-container h6{
-    color: black
 }
 
 .side-pointer-container{

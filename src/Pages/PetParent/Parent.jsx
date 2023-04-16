@@ -13,7 +13,7 @@ const petParent = () => {
         {/* Header */}
         <div className="parent-header max-width-100 d-flex">
           <div className="parent-header-content">
-            <h1>This might be your pet when you leave them home?</h1>
+            <h1 className='parent-header-content-h1'>This might be your pet when you leave them home?</h1>
             <br></br>
             <h5>
               You may have also thought of daycares but didn't found a reliable

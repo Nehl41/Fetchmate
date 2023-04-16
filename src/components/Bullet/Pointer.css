@@ -13,14 +13,16 @@
     box-shadow: .7px .7px 3px 3px #5c5c5c;
 }
 
-.pointer h6{
+.pointer-h6{
     text-align: justify;
     margin-left: 1.5rem;
     padding-left: .5rem;
+    color: black
 }
-.pointer h4{
+.pointer-h4{
     text-align: justify;
     margin-left: 2rem;
     font-weight: bold;
     padding-top: .5rem;
+    color: #006B5E;
 }

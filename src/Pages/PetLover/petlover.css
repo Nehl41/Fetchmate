@@ -26,7 +26,7 @@
     
 }
 
-.lover-header > h2{
+.lover-header-h2{
     color: black;
     position: absolute;
     text-decoration: overline;
@@ -35,14 +35,14 @@
     transform: translate(0,-25%);
 }
 
-.lover-header >h4{
+.lover-header-h4{
     color: black;
     position: absolute;
     top: 5%;
     left: 29%;
 }
 
-.lover-header >h6{
+.lover-header-h6{
     color: black;
     position: absolute;
     top: 93%;
@@ -53,6 +53,6 @@
     border-radius: 15%;
 }
 
-.lover-header >h6:hover{
+.lover-header-h6:hover{
     border: 3px solid #F7D65A;
 }
