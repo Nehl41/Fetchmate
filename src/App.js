@@ -36,7 +36,6 @@ function App() {
   return (
     <>
       <Nav />
-      {/* <PetLover/> */}
       <div className="main-content-app">
       {loading?<Loader/>:(<Routes>
         <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
