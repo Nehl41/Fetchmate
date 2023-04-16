@@ -1,0 +1,40 @@
+
+.h4style{
+    color: #1B3D2F;
+    font-family: Exo;
+    font-weight: 600;
+    margin-top: 2rem;
+    padding-left: 4rem;
+    text-align: center;
+    display: block;
+}
+
+.timeline-image-block-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-started-btn{
+    max-width:  fit-content ;
+    max-height:  fit-content ;
+    margin-top: 10rem;
+    padding:  1rem ;
+    border-radius:  55% ;
+    border: none ;
+    background-color:  #4C4637 ;
+    color:  white ;
+}
+
+.image-block{
+    width:'100vw' ;
+    justify-content: center;
+    display: flex;
+}
+
+.catdog-img{
+    width: 50%;
+    margin: 2px;
+    border-radius: .2rem;
+}

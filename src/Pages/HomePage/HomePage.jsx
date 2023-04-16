@@ -17,9 +17,9 @@ const HomePage = () => {
         <h6> Join us now and let your pet's adventure begin.</h6>
         </div>
         
-        <div className="letstry">
+        <div className="Joinus-btn">
           <Button
-            className="letstry"
+            className="Joinus-btn"
             variant="outlined"
             endIcon={<i class="fa-solid fa-arrow-up-right-from-square"></i>}
             sx={{ border: 3 ,borderColor: "white",fontSize:15,fontWeight:"bold",color: "#C4FCF0" ,":hover": {bgcolor: "#006B5E", color: "#ffffff",border: 3 }}}  >

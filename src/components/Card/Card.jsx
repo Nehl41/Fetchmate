@@ -1,5 +1,3 @@
-import './Card.css'
-
 import {Card,CardActionArea,Typography,CardContent,CardMedia, CardActions,Button} from '@mui/material'
 import { LinkedIn,Instagram,Mail } from '@mui/icons-material';
 

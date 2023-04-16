@@ -1,5 +1,6 @@
 .parent-container{
     flex-direction: column;
+    font-family: Exo;
 }
 
 .parent-header{
@@ -19,6 +20,7 @@
     margin-top: 7%;
     margin-left: 4%;
 }
+
 .parent-header-content > h1{
     color: #006B5E;
     text-decoration: underline #F7D65A;
@@ -59,4 +61,39 @@
     text-align: center;
     padding: 2rem;
     margin-inline: 15rem;
+    display: block;
+}
+
+.parent-bottom-container{
+    flex-direction: column;
+    background-image: url(../../assets/Image/petBackground.png);
+    /* background-image: url(https://www.smartpractice.com/Images/Products/PC/PhotoLg/EN0271.jpg); */
+    background-size: 100vw 73vh;
+    background-repeat: no-repeat;
+    padding: 4rem;
+}
+
+.add-pet-btn-container{
+    max-width: 245px; 
+    max-height: 350px ; 
+    margin-left: .5rem;
+    background-color: #CDC4BB ; 
+    opacity: 90%;
+    width: 320px ; 
+    position: relative; 
+    border-radius: 5%;
+}
+
+.add-pet-btn-container:hover{
+    box-shadow: 2px 1px 5px .5px black;
+}
+
+.add-pet-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 60%;
+    background-color: transparent;
+    border: none;
 }
