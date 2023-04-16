@@ -7,8 +7,8 @@ const FounderPointer = ({pointerImg,h4title,h6discription}) => {
           <img src={pointerImg} className="pointerImg" alt="pointer-paw"></img>
         </div>
         <div>
-          <h4>{h4title}</h4>
-          <h6>{h6discription}</h6>
+          <h4 className='pointer-h4'>{h4title}</h4>
+          <h6 className='pointer-h6'>{h6discription}</h6>
         </div>
       </div>
     );
