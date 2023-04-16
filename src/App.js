@@ -35,8 +35,7 @@ function App() {
   return (
     <>
       <Nav />
-      <PetParent/>
-      {/* <div className="main-content-app">
+      <div className="main-content-app">
       {loading?<Loader/>:(<Routes>
         <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
         <Route path="/parent" element={<PetParent />}></Route>
@@ -48,7 +47,7 @@ function App() {
           <Route path="developers" element={<Developers/>} />
         </Route>
       </Routes>)}
-      </div> */}
+      </div>
     </>
   );
 }

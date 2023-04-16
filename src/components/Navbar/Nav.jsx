@@ -3,9 +3,11 @@ import "./Nav.css";
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
 
-import { Popover ,Stack,Item} from "@mui/material";
+import { Popover ,Stack,Item, Avatar} from "@mui/material";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+const isLoggedIn=false;
 
 const Nav = () => {
   const [displaySignup, setDisplaySignup] = useState("inline");
@@ -29,9 +31,9 @@ const Nav = () => {
 
   useEffect(() => {
     console.log(pathname);
-    if (pathname == "/login") setDisplayLogin("none");
+    if (pathname == "/login" || isLoggedIn) setDisplayLogin("none");
     else setDisplayLogin("inline");
-    if (pathname == "/sign-up") setDisplaySignup("none");
+    if (pathname == "/sign-up" || isLoggedIn) setDisplaySignup("none");
     else setDisplaySignup("inline");
   }, []);
 
@@ -43,7 +45,7 @@ const Nav = () => {
             <img className="logo" src={fmlogo} alt="fetchmateLogo"></img>
             <div className="nav_links">
               <a href="/">Home</a>
-              <a href="">Pet Parent</a>
+              <a href="/parent">Pet Parent</a>
               <a href="">Pet lover</a>
               <span aria-describedby={id} onClick={handleClick}>Service</span>
               <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorReference="anchorPosition"
@@ -57,10 +59,9 @@ const Nav = () => {
     horizontal: 'center',
   }}>
               <Stack direction="row" spacing={2} sx={{height:"7rem",width:"40rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
-              <a href="/book-pet-sitting">Book Pet Sitting</a>
-              <a href="/book-pet-sitting">Book Pet Sitting</a>
-              <a href="/book-pet-sitting">Book Pet Sitting</a>
-              <a href="/book-pet-sitting">Book Pet Sitting</a>
+              <a href="/book-pet-sitting">Book Pet Sitter</a>
+              <a href="/book-pet-sitting">Order A Tracker</a>
+              <a href="/book-pet-sitting">Payment</a>
       </Stack>
               </Popover>
               <a href="/about-us/def">About us</a>
@@ -92,6 +93,7 @@ const Nav = () => {
               >
                 Login
               </Button>
+              {isLoggedIn?<Avatar>H</Avatar>:<></>}
             </Stack>
           </div>
         </section>
