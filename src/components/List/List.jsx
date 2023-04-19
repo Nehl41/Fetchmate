@@ -7,25 +7,25 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-export default function AlignItemsList({listIccon,serviceTitle,subserviceTitle,subservicedis}) {
+export default function AlignItemsList({serviceimage,servicetitle,servicesubtitle,servicediscription}) {
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',color: 'black', ":hover":{color:'black',textDecoration: 'none'}}}>
+    <List sx={{ width: '100%', maxWidth: 500 }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src={listIccon} />
+          <Avatar alt="Remy Sharp" src={serviceimage} />
         </ListItemAvatar>
+
         <ListItemText
-          primary={serviceTitle}
           secondary={
             <React.Fragment>
               <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
+                sx={{ display: 'inline', color: 'black', fontWeight: '500' }}
+                variant="body1"
               >
-                {subserviceTitle}
+                 {servicesubtitle}
               </Typography>
-              {subservicedis}
+              <br/>
+              {servicediscription}
             </React.Fragment>
           }
         />
