@@ -3,11 +3,10 @@ import "./Nav.css";
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
 
-import { Popover ,Stack,Item, Avatar} from "@mui/material";
-import { useEffect, useState } from "react";
+import { Popover, Stack, Avatar } from "@mui/material";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
-const isLoggedIn=false;
+import { UserContext } from "../../contexts/user.context";
 
 const Nav = () => {
   const [displaySignup, setDisplaySignup] = useState("inline");
@@ -27,18 +26,21 @@ const Nav = () => {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const id = open ? "simple-popover" : undefined;
+  const { currUser } = useContext(UserContext);
+  let isLoggedIn = false;
+  if (window.localStorage.getItem("token")) isLoggedIn = true;
 
   useEffect(() => {
-    console.log(pathname);
-    if (pathname == "/login" || isLoggedIn) setDisplayLogin("none");
+    console.log(`Current User:${currUser}`);
+    if (pathname === "/login" || isLoggedIn) setDisplayLogin("none");
     else setDisplayLogin("inline");
-    if (pathname == "/sign-up" || isLoggedIn) setDisplaySignup("none");
+    if (pathname === "/sign-up" || isLoggedIn) setDisplaySignup("none");
     else setDisplaySignup("inline");
-  }, []);
+  }, [currUser, pathname, isLoggedIn]);
 
   return (
-    <div>
+    <div >
       <nav>
         <section className="nav-section">
           <div className="nav_left">
@@ -47,22 +49,40 @@ const Nav = () => {
               <a href="/">Home</a>
               <a href="/parent">Pet Parent</a>
               <a href="/pet-lover">Pet lover</a>
-              <span aria-describedby={id} onClick={handleClick}>Service</span>
-              <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorReference="anchorPosition"
-  anchorPosition={{ top: "100", left: 800 }}
-  anchorOrigin={{
-    vertical: 'bottom',
-    horizontal: 'center',
-  }}
-  transformOrigin={{
-    vertical: 'top',
-    horizontal: 'center',
-  }}>
-              <Stack direction="row" spacing={2} sx={{height:"7rem",width:"40rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
-              <a href="/book-pet-sitting">Book Pet Sitter</a>
-              <a href="/book-pet-sitting">Order A Tracker</a>
-              <a href="/book-pet-sitting">Payment</a>
-      </Stack>
+              <span aria-describedby={id} onClick={handleClick}>
+                Service
+              </span>
+              <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorReference="anchorPosition"
+                anchorPosition={{ top: "100", left: 800 }}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "center",
+                }}
+              >
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  sx={{
+                    height: "7rem",
+                    width: "40rem",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                  }}
+                >
+                  <a href="/book-pet-sitting">Book Pet Sitter</a>
+                  <a href="/book-pet-sitting">Order A Tracker</a>
+                  <a href="/book-pet-sitting">Payment</a>
+                </Stack>
               </Popover>
               <a href="/about-us/def">About us</a>
             </div>
@@ -93,7 +113,7 @@ const Nav = () => {
               >
                 Login
               </Button>
-              {isLoggedIn?<Avatar>H</Avatar>:<></>}
+              {isLoggedIn ? <Avatar>H</Avatar> : <></>}
             </Stack>
           </div>
         </section>

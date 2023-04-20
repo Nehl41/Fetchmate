@@ -3,8 +3,12 @@ import Button from "@mui/material/Button";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Card from "./Card/Card";
 import RoleCard from "./Card/RoleCard";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+
+  const navigate=useNavigate()
+
   return (
     <header>
       <div className="header-content">
@@ -19,6 +23,7 @@ const HomePage = () => {
         
         <div className="Joinus-btn">
           <Button
+            href="/sign-up"
             className="Joinus-btn"
             variant="outlined"
             endIcon={<i class="fa-solid fa-arrow-up-right-from-square"></i>}
@@ -35,7 +40,7 @@ const HomePage = () => {
       <div className='containertop'>
          <h1 className="wju">Why Join us?</h1>
         <Card/>
-        <button className="aboutus">Know More About Us <InfoOutlinedIcon fontSize="medium"/> </button>
+        <button onClick={(e)=>navigate("/about-us/def")} className="aboutus">Know More About Us <InfoOutlinedIcon fontSize="medium"/> </button>
       </div>
     </header>
   );
