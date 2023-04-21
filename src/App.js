@@ -16,6 +16,7 @@ import Loader from "./components/Loader/Loader";
 import OurGoal from "./components/ourGoal/OurGoal";
 import Faqs from './components/Faqs/Faqs'
 import Developers from "./components/developers/Developers";
+import Model from "./components/Modal/Model"
 
 // Libraries and Package Imports
 import { Route, Routes } from "react-router-dom";
@@ -36,7 +37,8 @@ function App() {
   return (
     <>
       <Nav />
-      <div className="main-content-app">
+      <Model />
+      {/* <div className="main-content-app">
       {loading?<Loader/>:(<Routes>
         <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
         <Route path="/parent" element={<PetParent />}></Route>
@@ -49,7 +51,7 @@ function App() {
           <Route path="developers" element={<Developers/>} />
         </Route>
       </Routes>)}
-      </div>
+      </div> */}
     </>
   );
 }

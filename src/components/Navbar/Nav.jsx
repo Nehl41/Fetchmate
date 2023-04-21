@@ -1,7 +1,9 @@
 import "./Nav.css";
+import '../Modal/model.css';
 
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
+import Modal from "../Modal/Model"
 
 import { Popover ,Stack,Item, Avatar} from "@mui/material";
 import { useEffect, useState } from "react";
@@ -10,6 +12,8 @@ import { useLocation } from "react-router-dom";
 const isLoggedIn=false;
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   const [displaySignup, setDisplaySignup] = useState("inline");
 
   const [displayLogin, setDisplayLogin] = useState("inline");
@@ -60,7 +64,9 @@ const Nav = () => {
   }}>
               <Stack direction="row" spacing={2} sx={{height:"7rem",width:"40rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
               <a href="/book-pet-sitting">Book Pet Sitter</a>
-              <a href="/book-pet-sitting">Order A Tracker</a>
+              <a className="primayBtn" onClick={() => setIsOpen(true)}>Order A Tracker</a>
+              {isOpen && <Modal setIsOpen={setIsOpen} />}
+              {/* <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>open</button> */}
               <a href="/book-pet-sitting">Payment</a>
       </Stack>
               </Popover>
