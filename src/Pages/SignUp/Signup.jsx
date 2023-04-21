@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import InputLabel from "@mui/material/InputLabel";
@@ -17,20 +17,19 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 
-import { BASE_URL, requestURLs } from "../../utils/constants";
 
 const Signup = () => {
   const defaultInputs = {
     firstName: "",
     lastName: "",
     email: "",
-    birthDate: Date.now(),
+    birthDate: ()=> Date.now(),
     password: "",
     city: "",
     state: "",
     country: 0,
     phone: 0,
-    role: "r",
+    role: "PetLover",
     sex: "",
   };
   let navigate=useNavigate()

@@ -5,11 +5,10 @@ import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
 import Modal from "../Modal/Model"
 
-import { Popover ,Stack,Item, Avatar} from "@mui/material";
-import { useEffect, useState } from "react";
+import { Popover, Stack, Avatar } from "@mui/material";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
-const isLoggedIn=false;
+import { UserContext } from "../../contexts/user.context";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,18 +30,21 @@ const Nav = () => {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const id = open ? "simple-popover" : undefined;
+  const { currUser } = useContext(UserContext);
+  let isLoggedIn = false;
+  if (window.localStorage.getItem("token")) isLoggedIn = true;
 
   useEffect(() => {
-    console.log(pathname);
-    if (pathname == "/login" || isLoggedIn) setDisplayLogin("none");
+    console.log(`Current User:${currUser}`);
+    if (pathname === "/login" || isLoggedIn) setDisplayLogin("none");
     else setDisplayLogin("inline");
-    if (pathname == "/sign-up" || isLoggedIn) setDisplaySignup("none");
+    if (pathname === "/sign-up" || isLoggedIn) setDisplaySignup("none");
     else setDisplaySignup("inline");
-  }, []);
+  }, [currUser, pathname, isLoggedIn]);
 
   return (
-    <div>
+    <div >
       <nav>
         <section className="nav-section">
           <div className="nav_left">
@@ -99,7 +101,7 @@ const Nav = () => {
               >
                 Login
               </Button>
-              {isLoggedIn?<Avatar>H</Avatar>:<></>}
+              {isLoggedIn ? <Avatar>H</Avatar> : <></>}
             </Stack>
           </div>
         </section>

@@ -30,7 +30,7 @@ function RoleCard() {
           </Typography>
       </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
-      <Button variant="contained" sx={{ backgroundColor: '#4C4637'}} >
+      <Button href='/parent' variant="contained" sx={{ backgroundColor: '#4C4637'}} >
         Tell me more
       </Button>
       </CardActions>
@@ -51,7 +51,7 @@ function RoleCard() {
         </Typography>
       </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
-      <Button variant="contained" sx={{ backgroundColor: '#4C4637'}}>
+      <Button href='/pet-lover' variant="contained" sx={{ backgroundColor: '#4C4637'}}>
         Tell me more
       </Button>
       </CardActions>
