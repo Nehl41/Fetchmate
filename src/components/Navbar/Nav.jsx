@@ -3,7 +3,6 @@ import '../Modal/model.css';
 
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
-import Modal from "../Modal/Model"
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
@@ -67,8 +66,6 @@ const Nav = () => {
               <Stack direction="row" spacing={2} sx={{height:"7rem",width:"40rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
               <a href="/book-pet-sitting">Book Pet Sitter</a>
               <a className="primayBtn" onClick={() => setIsOpen(true)}>Order A Tracker</a>
-              {isOpen && <Modal setIsOpen={setIsOpen} />}
-              {/* <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>open</button> */}
               <a href="/book-pet-sitting">Payment</a>
       </Stack>
               </Popover>

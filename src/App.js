@@ -16,11 +16,13 @@ import Loader from "./components/Loader/Loader";
 import OurGoal from "./components/ourGoal/OurGoal";
 import Faqs from './components/Faqs/Faqs'
 import Developers from "./components/developers/Developers";
-import Model from "./components/Modal/Model"
+
 
 // Libraries and Package Imports
 import { Route, Routes } from "react-router-dom";
 import { useState,useEffect } from "react";
+import AddPetSitter from "./components/AddPetSitter/AddPetSitter";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 
 function App() {
@@ -37,11 +39,15 @@ function App() {
   return (
     <>
       <Nav />
-      <Model />
-      {/* <div className="main-content-app">
+      <div className="main-content-app">
       {loading?<Loader/>:(<Routes>
         <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
-        <Route path="/parent" element={<PetParent />}></Route>
+        <Route path="/parent" element={<PetParent />}>
+          <Route element={<ProtectedRoutes/>}>
+             <Route path="add-pet" element={<AddPetSitter/>}></Route>
+          </Route>
+        </Route>
+        
         <Route path="/pet-lover" element={<PetLover />}></Route>
         <Route path="/sign-up" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -51,7 +57,7 @@ function App() {
           <Route path="developers" element={<Developers/>} />
         </Route>
       </Routes>)}
-      </div> */}
+      </div>
     </>
   );
 }

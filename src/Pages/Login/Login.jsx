@@ -103,7 +103,7 @@ function Login() {
                 style={{ color: "#4C4637" }}
               >
                 Don't have an account?{" "}
-                <a href="#!" style={{ color: "#393f81" }}>
+                <a href="/sign-up" style={{ color: "#393f81" }}>
                   Register here
                 </a>
               </p>
