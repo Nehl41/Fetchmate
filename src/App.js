@@ -20,14 +20,14 @@ import Developers from "./components/developers/Developers";
 
 // Libraries and Package Imports
 import { Route, Routes } from "react-router-dom";
-import { useState,useEffect } from "react";
-import AddPetSitter from "./components/AddPetSitter/AddPetSitter";
+import { useState, useEffect } from "react";
+import AddPetSection from "./components/AddPetSitter/AddPetSection";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 
 
 function App() {
 
-  const [loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -40,23 +40,23 @@ function App() {
     <>
       <Nav />
       <div className="main-content-app">
-      {loading?<Loader/>:(<Routes>
-        <Route path="/" element={<><HomePage/><Footer /> </>}></Route>
-        <Route path="/parent" element={<PetParent />}>
-          <Route element={<ProtectedRoutes/>}>
-             <Route path="add-pet" element={<AddPetSitter/>}></Route>
+        {loading ? <Loader /> : (<Routes>
+          <Route path="/" element={<><HomePage /><Footer /> </>}></Route>
+          <Route path="/parent" element={<PetParent />}>
+            <Route element={<ProtectedRoutes />}>
+              <Route path="add-pet" element={<AddPetSection />}></Route>
+            </Route>
           </Route>
-        </Route>
-        
-        <Route path="/pet-lover" element={<PetLover />}></Route>
-        <Route path="/sign-up" element={<Signup />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/about-us" element={<AboutUs/>}>
-          <Route path="def" element={<OurGoal/>} />
-          <Route path="faqs" element={<Faqs/>} />
-          <Route path="developers" element={<Developers/>} />
-        </Route>
-      </Routes>)}
+
+          <Route path="/pet-lover" element={<PetLover />}></Route>
+          <Route path="/sign-up" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/about-us" element={<AboutUs />}>
+            <Route path="def" element={<OurGoal />} />
+            <Route path="faqs" element={<Faqs />} />
+            <Route path="developers" element={<Developers />} />
+          </Route>
+        </Routes>)}
       </div>
     </>
   );

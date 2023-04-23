@@ -43,3 +43,9 @@
 .footer-socialmedia-links >a :hover{
     color:#F7D65A;
 } 
+
+
+.enhance-image:hover{
+    transition: 0.2s;
+ transform: scale(1.3);
+}
