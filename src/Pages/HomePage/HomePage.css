@@ -1,98 +1,100 @@
-.homepage{
-    background-image: url(../../assets/Image/corgi_pet_dog_is_sitting_on_wooden_bench_4k_5k_hd_animals-5120x2880.jpg);
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 0px 7px 3px -3px rgba(50,50,50,0.75);
+.homepage {
+  background-image: url(../../assets/Image/corgi_pet_dog_is_sitting_on_wooden_bench_4k_5k_hd_animals-5120x2880.jpg);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px 7px 3px -3px rgba(50, 50, 50, 0.75);
 }
 
-.header_content{
-    margin-left: 5vh;
-    padding-top: 20vw; 
-    position: relative;
- }
-
-.header_desc{
-    width:45%;
-    margin-left: 1.25rem;
-    color: whitesmoke;
-    font-family: Exo;
-    font-size: 0.63rem;
-    font-weight: 500;
-    margin-bottom: 0.7vw;
-    z-index: 2;
-    position: absolute;
-    top: 38%;
-    left: 3%;
+.header_content {
+  margin-left: 5vh;
+  padding-top: 20vw;
+  position: relative;
 }
 
-.header_desc h1{
-    font-weight: 600;
-    font-size:3vw;
-}
-.header_desc h5,h6{
-    font-size:1.3vw;
-}
-
-.Joinus-btn{
-    z-index: 2;
-    font-family: Exo;
-    font-weight: 'large';
-    position: absolute;
-    top: 72%;
-    left: 24%;
+.header_desc {
+  width: 45%;
+  margin-left: 1.25rem;
+  color: whitesmoke;
+  font-family: Exo;
+  font-size: 0.63rem;
+  font-weight: 500;
+  margin-bottom: 0.7vw;
+  z-index: 2;
+  position: absolute;
+  top: 38%;
+  left: 3%;
 }
 
-.Role-opetions{
-    padding: 1rem;
-    justify-content: center; 
-    /* background: linear-gradient(-45deg,#006B5E,#C4FCF0); */
-    width: 100%;
-    position: relative;
+.header_desc h1 {
+  font-weight: 600;
+  font-size: 3vw;
+}
+.header_desc h5,
+h6 {
+  font-size: 1.3vw;
 }
 
-.containertop{
-    margin-top: 2rem ;
-    padding: 1rem;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    /* backdrop-filter: opacity(2px);
+.Joinus-btn {
+  z-index: 2;
+  font-family: Exo;
+  font-weight: "large";
+  position: absolute;
+  top: 72%;
+  left: 24%;
+}
+
+.Role-opetions {
+  padding: 1rem;
+  justify-content: center;
+  /* background: linear-gradient(-45deg,#006B5E,#C4FCF0); */
+  width: 100%;
+  position: relative;
+}
+
+.containertop {
+  margin-top: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  /* backdrop-filter: opacity(2px);
     background-image: url("https://t3.ftcdn.net/jpg/02/98/20/18/360_F_298201821_e90YxH0f6FBwOvcKhynlwF8sNYxlCMsg.jpg"); */
-    /* background: linear-gradient(90deg,#006B5E,#C4FCF0); */
+  /* background: linear-gradient(90deg,#006B5E,#C4FCF0); */
 }
 
-.wju{
-    text-align: center;
-    font-family: BioRhyme;
-    font-weight: bold;
+.wju {
+  text-align: center;
+  font-family: BioRhyme;
+  font-weight: bold;
 }
 
-.aboutus{
-    border: 5px solid #006B5E;
-    color:#006B5E;
-    background-color: rgba(245, 245, 220, 0.808);
-    /* background-color: #006B5E;
+.aboutus {
+  border: 5px solid #006b5e;
+  color: #006b5e;
+  background-color: rgba(245, 245, 220, 0.808);
+  /* background-color: #006B5E;
     color: rgba(245, 245, 220, 0.808); */
-    padding: 0.438rem 1.25rem;
-    font-family: Exo;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.25rem;
-    display: inline-block;
-    position: relative;
-    margin-top: 2.188rem;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);;
+  padding: 0.438rem 1.25rem;
+  font-family: Exo;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  display: inline-block;
+  position: relative;
+  margin-top: 2.188rem;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
 }
 
-.aboutus:hover{
-    background-color: #006B5E;
-    color: rgba(245, 245, 220, 0.808);
-    /* border: 5px solid #006B5E;
+.aboutus:hover {
+  background-color: #006b5e;
+  color: rgba(245, 245, 220, 0.808);
+  transform: translate(-50%, -50%) scale(1.2);
+  /* border: 5px solid #006B5E;
     color:#006B5E;
     background-color: rgba(245, 245, 220, 0.808); */
 }
-

@@ -1,8 +1,11 @@
 import "./Nav.css";
-import '../Modal/model.css';
 
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
+import BookOnlineIcon from "@mui/icons-material/BookOnline";
+import ShareLocationIcon from "@mui/icons-material/ShareLocation";
+import PaidIcon from "@mui/icons-material/Paid";
+import AddTrackerModal from "../../components/Modal/ModalPage";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
@@ -10,8 +13,9 @@ import { useLocation } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  
+
+  const [showModal, setShowModal] = useState(false);
+
   const [displaySignup, setDisplaySignup] = useState("inline");
 
   const [displayLogin, setDisplayLogin] = useState("inline");
@@ -42,8 +46,22 @@ const Nav = () => {
     else setDisplaySignup("inline");
   }, [currUser, pathname, isLoggedIn]);
 
+  const servicesStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+  };
+
+  const buttonScaleStyles = {
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+    transition: "0.3s",
+  };
+
   return (
-    <div >
+    <div>
       <nav>
         <section className="nav-section">
           <div className="nav_left">
@@ -52,22 +70,61 @@ const Nav = () => {
               <a href="/">Home</a>
               <a href="/parent">Pet Parent</a>
               <a href="/pet-lover">Pet lover</a>
-              <span aria-describedby={id} onClick={handleClick}>Service</span>
-              <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorReference="anchorPosition"
-  anchorPosition={{ top: "100", left: 800 }}
-  anchorOrigin={{
-    vertical: 'bottom',
-    horizontal: 'center',
-  }}
-  transformOrigin={{
-    vertical: 'top',
-    horizontal: 'center',
-  }}>
-              <Stack direction="row" spacing={2} sx={{height:"7rem",width:"40rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
-              <a href="/book-pet-sitting">Book Pet Sitter</a>
-              <a className="primayBtn" onClick={() => setIsOpen(true)}>Order A Tracker</a>
-              <a href="/book-pet-sitting">Payment</a>
-      </Stack>
+              <span aria-describedby={id} onClick={handleClick}>
+                Service
+              </span>
+              <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorReference="anchorPosition"
+                anchorPosition={{ top: "100", left: 800 }}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "center",
+                }}
+              >
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  sx={{
+                    height: "7rem",
+                    width: "40rem",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                  }}
+                >
+                  <a href="/book-pet-sitting" style={servicesStyles}>
+                    {" "}
+                    <BookOnlineIcon fontSize="large" />
+                    Book Pet Sitter
+                  </a>
+
+                  <AddTrackerModal
+                    visible={showModal}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                  />
+
+                  <a
+                    href={AddTrackerModal}
+                    style={servicesStyles}
+                    onClick={() => setShowModal(true)}
+                  >
+                    <ShareLocationIcon fontSize="large" />
+                    Order A Tracker
+                  </a>
+                  <a href="/book-pet-sitting" style={servicesStyles}>
+                    <PaidIcon fontSize="large" />
+                    Payment
+                  </a>
+                </Stack>
               </Popover>
               <a href="/about-us/def">About us</a>
             </div>
@@ -83,8 +140,9 @@ const Nav = () => {
                 style={{ display: displaySignup }}
                 href="/sign-up"
                 className="Home_btns"
-                variant="contained"
+                variant="outlined"
                 size="small"
+                sx={buttonScaleStyles}
               >
                 Sign up
               </Button>
@@ -95,6 +153,7 @@ const Nav = () => {
                 className="Home_btns"
                 variant="outlined"
                 size="small"
+                sx={buttonScaleStyles}
               >
                 Login
               </Button>
