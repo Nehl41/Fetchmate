@@ -1,11 +1,18 @@
 import './Parent.css';
+
+// Images
 import petFrame from '../../assets/Image/Frame1.png'
 import pointerPaw from '../../assets/Image/Bullet.png'
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import bellawithnehal from '../../assets/Image/nehalandbella.jpg'
+
+// Iocns
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
+// Components
 import Pointerset from '../../components/Bullet/Pointer'
 import PetCard from '../../components/Card/PetCard'
 import Commonfooter from '../../components/Footer/commonfooter';
+
 import { Outlet } from 'react-router';
 import { Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -98,6 +105,7 @@ const petParent = () => {
               ></img>
             </div>
           </div>
+          
           <Divider sx={{ borderBottomWidth: 10 }}>
           <Link to="/parent/add-pet"><div className="rotation-add"><AddCircleIcon fontSize='large'/></div></Link>
         </Divider>
