@@ -6,11 +6,22 @@ import bellawithnehal from "../../assets/Image/nehalandbella.jpg";
 import Pointerset from "../../components/Bullet/Pointer";
 import PetCard from "../../components/Card/PetCard";
 import Commonfooter from "../../components/Footer/commonfooter";
+import CurvedArrow from 'react-curved-arrow'
 import { Outlet } from "react-router";
 import { Divider } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const petParent = () => {
+const PetParent = () => {
+
+  const [displayArrow,setDisplayArrow]=useState("none")
+
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>646){
+      setDisplayArrow("block")
+    }
+  })
+
   return (
     <div className="parent-container d-flex">
       {/* Header */}
@@ -89,6 +100,7 @@ const petParent = () => {
             <img
               src={bellawithnehal}
               alt="bella"
+              className="bella"
               style={{
                 maxHeight: "inherit",
                 maxWidth: "inherit",
@@ -100,6 +112,7 @@ const petParent = () => {
             ></img>
           </div>
         </div>
+
         <Divider sx={{ borderBottomWidth: 10 }}>
           <Link to="/parent/add-pet">
             <div className="rotation-add">
@@ -107,7 +120,28 @@ const petParent = () => {
             </div>
           </Link>
         </Divider>
+        <div style={{display:displayArrow}}  className="product-tour">
+        <CurvedArrow
+  
+        color="#75E6DA"
+        zIndex={9999999}
+        width={7}
+        fromSelector=".bella"
+        fromOffsetX={-50}
+        fromOffsetY={-300}
+        toSelector=".rotation-add"
+        // toOffsetX={-100}
+        middleX={-50}
+        middleY={20}
+        toOffsetY={-5}
+        toOffsetX={15}
+        // middleY={50}
+      />
+        <h2 style={{paddingLeft:"65%"}}>Add Your Pets Here!</h2>
+        </div>
       </div>
+
+
 
       {/* My-Pet-view */}
 
@@ -119,33 +153,5 @@ const petParent = () => {
   );
 };
 
-export default petParent;
+export default PetParent;
 
-{
-  /* <div className="parent-bottom-container d-flex justify-content-center">
-          <h2 style={{textAlign: "center", color: 'black'}}>Your Pets</h2>
-
-          <div className="petcards d-flex justify-content-center">
-            {/* on adding-pet */
-}
-// <PetCard
-//   petImage={
-//     "https://img.freepik.com/free-photo/adorable-brown-white-basenji-dog-smiling-giving-high-five-isolated-white_346278-1657.jpg?size=626&ext=jpg&ga=GA1.1.793567355.1673874082&semt=robertav1_2_sidr"
-//   }
-//   petName={"Pet Name"}
-//   petUniqueId={"Pet's Fetchmate unique id"}
-// />
-
-{
-  /* constent-add-new-card */
-}
-//     <div className="add-pet-btn-container">
-//       <button className="add-pet-btn">
-//         <AddCircleIcon
-//           sx={{ fontSize: 150, ":hover": { fontSize: 175 } }}
-//         />
-//         <h6>Add Your Furry Friend</h6>
-//       </button>
-//     </div>
-//   </div>
-// </div> */}
