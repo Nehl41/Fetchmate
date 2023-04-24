@@ -1,4 +1,4 @@
-import './ModalPage.css'
+import './TrackerModalPage.css'
 import React from "react";
 import Rodal from "rodal";
 

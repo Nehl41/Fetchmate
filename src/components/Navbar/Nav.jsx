@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import PaidIcon from "@mui/icons-material/Paid";
-import AddTrackerModal from "../../components/Modal/ModalPage";
+import AddTrackerModal from "../../components/Modal/TrackerModalPage";
 import { ClickAwayListener, Typography } from "@mui/material";
 
 import { Popover, Stack, Avatar } from "@mui/material";
