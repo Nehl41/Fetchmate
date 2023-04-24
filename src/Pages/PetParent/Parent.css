@@ -1,6 +1,6 @@
 .parent-container{
     flex-direction: column;
-    font-family: Exo;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .parent-header{
@@ -14,7 +14,7 @@
 
 .parent-header-content{
     color: black;
-    font-family: Exo;
+    font-family: 'Exo 2', sans-serif;
     height: fit-content;
     width: 45%;
     margin-top: 7%;
@@ -48,7 +48,7 @@
 
 .h2style{
     color: #1B3D2F;
-    font-family: Exo;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 600;
     text-align: center;
     padding: 2rem;

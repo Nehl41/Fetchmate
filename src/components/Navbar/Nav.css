@@ -27,13 +27,15 @@ section{
     position: relative;
     display: inline-block;
     margin-left: 2rem;
-    font-family: 'Exo';
+    font-family: 'Exo 2', sans-serif;
     font-size: 1.5vw;
     transition: all 0.6 ease;
     cursor: pointer;  
 }
 
 .nav_links a:hover,span:hover{
+    transition: 0.115s;
+    transition-timing-function: ease-in-out;
     color:#006B5E;
     border-bottom: 4px solid rgb(247, 214, 90);
 }
@@ -50,7 +52,7 @@ section{
 }
 
 .Search_bar {
-    font-family: 'Exo';
+    font-family: 'Exo 2', sans-serif;
     width: 15rem;
     height: 1.85rem;
     border-radius: .5rem;

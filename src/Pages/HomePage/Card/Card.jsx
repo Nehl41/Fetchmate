@@ -41,7 +41,7 @@ const card = () => {
       </Card>
       </div>
 
-      <div>
+      <div className='card-div'>
         <Card sx={{ maxWidth: 345}}>
         <CardActionArea>
           <CardMedia
@@ -65,7 +65,7 @@ const card = () => {
       </Card>
       </div>
 
-      <div>
+      <div className='card-div'>
         <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia

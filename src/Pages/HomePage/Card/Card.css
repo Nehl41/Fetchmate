@@ -9,3 +9,9 @@
     margin: 0.625rem;
     text-align: center;
 }
+
+.card-div:hover{
+    transition: 0.1s;
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out;
+}

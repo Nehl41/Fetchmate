@@ -120,24 +120,7 @@ const PetParent = () => {
             </div>
           </Link>
         </Divider>
-        <div style={{display:displayArrow}} className="product-tour">
-        <CurvedArrow
-        color="#75E6DA"
-        zIndex={9999999}
-        width={7}
-        fromSelector=".bella"
-        fromOffsetX={-50}
-        fromOffsetY={-300}
-        toSelector=".rotation-add"
-        // toOffsetX={-100}
-        middleX={-50}
-        middleY={20}
-        toOffsetY={-5}
-        toOffsetX={15}
-        // middleY={50}
-      />
-        <h2 style={{paddingLeft:"65%"}}>Add Your Pets Here!</h2>
-        </div>
+        
       </div>
 
 

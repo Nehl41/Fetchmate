@@ -62,7 +62,7 @@ const Nav = () => {
 
   return (
     <div>
-      <nav>
+      <nav >
         <section className="nav-section">
           <div className="nav_left">
             <img className="logo" src={fmlogo} alt="fetchmateLogo"></img>
