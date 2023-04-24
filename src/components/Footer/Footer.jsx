@@ -4,6 +4,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import Swayam from '../../assets/Image/swayam.jpg'
+import Nehal from '../../assets/Image/nehal.jpg'
+import Akshada from '../../assets/Image/akshada.jpg'
 
 function Footer() {
   return (
@@ -24,16 +27,16 @@ function Footer() {
       <div className="footer-developer-profile">
         <div className="footer-developer-profiles enhance-image">
           <img
-            src="https://media.gettyimages.com/id/1227618779/vector/human-face-avatar-icon-profile-for-social-network-man-vector-illustration.jpg?s=1024x1024&w=gi&k=20&c=mS_M-kj09U5NT_sQlI1IslJSUNYxAmu6XHidGwwjOKs="
+            src={Swayam}
             alt="Avtar"
-            className=""
+            className="swayam"
           ></img>
           <h6>
             Swayam Prajapat <br /> Backend-developer
           </h6>
         </div>
         <div className="footer-developer-profiles enhance-image">
-          <img src={NehalImg} alt="Avtar"></img>
+          <img src={Nehal} alt="Avtar" className="nehal"/>
           <h6>
             Nehal Patidar
             <br /> Front-end-developer
@@ -41,8 +44,9 @@ function Footer() {
         </div>
         <div className="footer-developer-profiles enhance-image">
           <img
-            src="https://media.gettyimages.com/id/1227618779/vector/human-face-avatar-icon-profile-for-social-network-man-vector-illustration.jpg?s=1024x1024&w=gi&k=20&c=mS_M-kj09U5NT_sQlI1IslJSUNYxAmu6XHidGwwjOKs="
+            src={Akshada}
             alt="Avtar"
+            className="akshada"
           ></img>
           <h6>
             Akshadha <br /> Ese-hi-chalne do-developer
