@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Swayam from '../../assets/Image/swayam.jpg'
-import Nehal from '../../assets/Image/nehal.jpg'
+import Nehal from '../../assets/Image/nehal.png'
 import Akshada from '../../assets/Image/akshada.jpg'
 
 function Footer() {
