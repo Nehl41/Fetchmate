@@ -120,9 +120,8 @@ const PetParent = () => {
             </div>
           </Link>
         </Divider>
-        <div style={{display:displayArrow}}  className="product-tour">
+        <div style={{display:displayArrow}} className="product-tour">
         <CurvedArrow
-  
         color="#75E6DA"
         zIndex={9999999}
         width={7}

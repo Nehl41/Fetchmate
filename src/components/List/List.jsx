@@ -5,8 +5,7 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
-import { withStyles } from "@mui/material";
+import Typography from "@mui/material/Typography"; 
 
 export default function AlignItemsList({
   serviceimage,
@@ -23,7 +22,7 @@ export default function AlignItemsList({
 
   return (
     <List sx={{ width: "100%", maxWidth: 500 }}>
-      <ListItem sx={ListItemSx} alignItems="flex-start">
+      <ListItem alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src={serviceimage} />
         </ListItemAvatar>
