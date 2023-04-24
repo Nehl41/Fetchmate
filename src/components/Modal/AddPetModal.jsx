@@ -55,14 +55,14 @@ const AddPetModal = ({ showModal, setShowModal }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: "80vh",
+        height: "95vh",
         width: "60vw",
         overflow: "auto",
       }}
       visible={showModal}
       onClose={() => setShowModal(false)}
     >
-      <Typography variant="h4">Add Your Pet</Typography>
+      <Typography variant="h4" >Add Your Pet</Typography>
       <MDBCardImage
         src={formGif}
         alt="Sample photo"

@@ -5,20 +5,13 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography"; 
+import Typography from "@mui/material/Typography";
 
 export default function AlignItemsList({
   serviceimage,
-  servicetitle,
   servicesubtitle,
   servicediscription,
 }) {
-  const ListItemSx = {
-    "&:hover": {
-      transform: "scale(1.5)",
-    },
-    transition: "0.5s",
-  };
 
   return (
     <List sx={{ width: "100%", maxWidth: 500 }}>

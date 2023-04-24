@@ -1,11 +1,11 @@
 import "./Nav.css";
-import "../Modal/model.css";
 
 import fmlogo from "../../assets/Image/logo-color.png";
 import Button from "@mui/material/Button";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import PaidIcon from "@mui/icons-material/Paid";
+import AddTrackerModal from "../../components/Modal/ModalPage";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
@@ -13,7 +13,8 @@ import { useLocation } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
 
   const [displaySignup, setDisplaySignup] = useState("inline");
 
@@ -104,7 +105,18 @@ const Nav = () => {
                     <BookOnlineIcon fontSize="large" />
                     Book Pet Sitter
                   </a>
-                  <a className="primayBtn" style={servicesStyles}>
+
+                  <AddTrackerModal
+                    visible={showModal}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                  />
+
+                  <a
+                    href={AddTrackerModal}
+                    style={servicesStyles}
+                    onClick={() => setShowModal(true)}
+                  >
                     <ShareLocationIcon fontSize="large" />
                     Order A Tracker
                   </a>

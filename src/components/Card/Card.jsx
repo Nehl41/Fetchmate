@@ -3,9 +3,9 @@ import { LinkedIn,Instagram,Mail } from '@mui/icons-material';
 
 const FounderCard=({cardImage,cardTitle,cardDescription,linkedInLink,instagramLink}) => {
     return(
-        <Card sx={{ maxWidth: "25rem"}}>
+        <Card sx={{ maxWidth: "25rem", marginTop: '2rem'}}>
         <CardActionArea sx={{minHeight:"10rem"}}>
-          <CardMedia sx={{maxHeight:"25rem"}}
+          <CardMedia sx={{maxHeight:"20rem"}}
             component="img"
             image={cardImage}
             alt="Adorable environment"
