@@ -6,14 +6,16 @@ import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import PaidIcon from "@mui/icons-material/Paid";
 import AddTrackerModal from "../../components/Modal/ModalPage";
+import { ClickAwayListener, Typography } from "@mui/material";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
-const Nav = () => {
+import ProfileModal from '../ProfileModal/ProfileModal'
 
+const Nav = () => {
   const [showModal, setShowModal] = useState(false);
 
   const [displaySignup, setDisplaySignup] = useState("inline");
@@ -32,10 +34,15 @@ const Nav = () => {
     setAnchorEl(null);
   };
 
+  const [openProfile,setOpenProfile]=useState(false);
+  const handleOpenProfile=()=>{setOpenProfile(true)}
+  const handleCloseProfile=()=>{setOpenProfile((!openProfile))}
+
+
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
   const { currUser } = useContext(UserContext);
-  let isLoggedIn = false;
+  let isLoggedIn = true;
   if (window.localStorage.getItem("token")) isLoggedIn = true;
 
   useEffect(() => {
@@ -62,7 +69,7 @@ const Nav = () => {
 
   return (
     <div>
-      <nav >
+      <nav>
         <section className="nav-section">
           <div className="nav_left">
             <img className="logo" src={fmlogo} alt="fetchmateLogo"></img>
@@ -157,7 +164,33 @@ const Nav = () => {
               >
                 Login
               </Button>
-              {isLoggedIn ? <Avatar>H</Avatar> : <></>}
+              {isLoggedIn ? (
+                 <ClickAwayListener onClickAway={handleCloseProfile}>
+                <div
+                  onClick={handleOpenProfile}
+                  className="profile-popover-origin"
+                  style={{position:"relative"}}
+                >
+                
+                 <Avatar
+                    sx={{
+                      "&:hover": {
+                        border: "3px solid black",
+                        transform: "scale(1.3)",
+                        transition: "0.2s",
+                      },
+                    }}
+                  >
+                    H
+                  </Avatar>
+                  {openProfile?<ProfileModal/>:null}
+                 
+                 
+                </div>
+                </ClickAwayListener>
+              ) : (
+                <></>
+              )}
             </Stack>
           </div>
         </section>
