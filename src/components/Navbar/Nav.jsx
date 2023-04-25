@@ -33,10 +33,7 @@ const Nav = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const [openProfile,setOpenProfile]=useState(false);
-  const handleOpenProfile=()=>{setOpenProfile(true)}
-  const handleCloseProfile=()=>{setOpenProfile((!openProfile))}
+  
 
 
   const open = Boolean(anchorEl);
@@ -165,12 +162,7 @@ const Nav = () => {
                 Login
               </Button>
               {isLoggedIn ? (
-                 <ClickAwayListener onClickAway={handleCloseProfile}>
-                <div
-                  onClick={handleOpenProfile}
-                  className="profile-popover-origin"
-                  style={{position:"relative"}}
-                >
+                 
                 
                  <Avatar
                     sx={{
@@ -182,15 +174,8 @@ const Nav = () => {
                     }}
                   >
                     H
-                  </Avatar>
-                  {openProfile?<ProfileModal/>:null}
-                 
-                 
-                </div>
-                </ClickAwayListener>
-              ) : (
-                <></>
-              )}
+                  </Avatar>):null
+                  }
             </Stack>
           </div>
         </section>

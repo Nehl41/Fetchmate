@@ -3,7 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCar
 
 const ECommerce=()=>{
   return (
-        <MDBRow className="justify-content-center">
+        <MDBRow className="position-absolute top-100 start-70 translate-middle">
           <MDBCol md="9" lg="7" xl="5" className="mt-5">
             <MDBCard style={{ borderRadius: '15px', backgroundColor: '#93e2bb' }}>
               <MDBCardBody className="p-4 text-black">
