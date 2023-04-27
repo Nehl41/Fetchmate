@@ -6,14 +6,15 @@ import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import PaidIcon from "@mui/icons-material/Paid";
 import AddTrackerModal from "../../components/Modal/TrackerModalPage";
-import { ClickAwayListener, Typography } from "@mui/material";
+import { ClickAwayListener, Menu, MenuItem, Typography } from "@mui/material";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
-import ProfileModal from '../ProfileModal/ProfileModal'
+import ProfileModal from "../ProfileModal/ProfileModal";
+import axios from "axios";
 
 const Nav = () => {
   const [showModal, setShowModal] = useState(false);
@@ -26,6 +27,15 @@ const Nav = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
 
+  const [profileEl,setprofileEl]=useState(null);
+  const openProfile=Boolean(profileEl)
+  const handleProfileOpen=(event)=>{
+    setprofileEl(event.currentTarget)
+  }
+  const handleProfileClose=()=>{
+    setprofileEl(null)
+  }
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -33,13 +43,11 @@ const Nav = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
-
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
   const { currUser } = useContext(UserContext);
-  let isLoggedIn = true;
+  let isLoggedIn = false;
   if (window.localStorage.getItem("token")) isLoggedIn = true;
 
   useEffect(() => {
@@ -48,6 +56,7 @@ const Nav = () => {
     else setDisplayLogin("inline");
     if (pathname === "/sign-up" || isLoggedIn) setDisplaySignup("none");
     else setDisplaySignup("inline");
+    if(window.localStorage.getItem("token")) isLoggedIn=true
   }, [currUser, pathname, isLoggedIn]);
 
   const servicesStyles = {
@@ -63,6 +72,10 @@ const Nav = () => {
     },
     transition: "0.3s",
   };
+
+  const handleLogOut=(e)=>{
+    window.localStorage.removeItem('token')
+  }
 
   return (
     <div>
@@ -162,20 +175,37 @@ const Nav = () => {
                 Login
               </Button>
               {isLoggedIn ? (
-                 
-                
-                 <Avatar
-                    sx={{
-                      "&:hover": {
-                        border: "3px solid black",
-                        transform: "scale(1.3)",
-                        transition: "0.2s",
-                      },
-                    }}
-                  >
-                    H
-                  </Avatar>):null
-                  }
+                <>
+                <Button id="basic-button"
+                aria-controls={openProfile?"basic-menu":undefined}
+                aria-haspopup="true"
+                aria-expanded={openProfile?'true':undefined}
+                onClick={handleProfileOpen}
+                >
+                  <Avatar
+                  sx={{
+                    "&:hover": {
+                      border: "3px solid black",
+                      transform: "scale(1.3)",
+                      transition: "0.2s",
+                    },
+                  }}
+                >
+                  H
+                </Avatar>
+                </Button>
+                <Menu id="basic-menu"
+                anchorEl={profileEl}
+                open={openProfile}
+                onClose={handleProfileClose}
+                MenuListProps={{
+                  'aria-labelledby':'basic-button'
+                }}
+                >
+                  <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
+                </Menu>
+                </>
+              ) : null}
             </Stack>
           </div>
         </section>
