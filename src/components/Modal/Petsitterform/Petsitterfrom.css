@@ -1,0 +1,39 @@
+form{
+    width: 75%;
+}
+
+label{
+    font-weight: 500;
+}
+
+input[type="text"],
+textarea {
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+.date-n-type{
+    margin-top: .5rem;
+}
+
+button[type="submit"] {
+  margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background-color: #4C4637;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+  
+  

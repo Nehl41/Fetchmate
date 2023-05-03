@@ -6,17 +6,27 @@ import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import PaidIcon from "@mui/icons-material/Paid";
 import AddTrackerModal from "../../components/Modal/TrackerModalPage";
-import { ClickAwayListener, Typography } from "@mui/material";
+import Petsitterform from "../../components//Modal/Petsitterform/Petsitterform"
+import PaymentModal from "../../components//Modal/PaymentModal/Paymentpage"
+import { ClickAwayListener, Menu, MenuItem, Typography } from "@mui/material";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
-import ProfileModal from '../ProfileModal/ProfileModal'
+import ProfileModal from "../ProfileModal/ProfileModal";
+import axios from "axios";
 
 const Nav = () => {
+
+  const navigate=useNavigate()
+
+  const [showsitterModal, setsitterShowModal] = useState(false);
+
   const [showModal, setShowModal] = useState(false);
+
+  const [showpaymentModal, setpaymentShowModal] = useState(false);
 
   const [displaySignup, setDisplaySignup] = useState("inline");
 
@@ -26,6 +36,15 @@ const Nav = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
 
+  const [profileEl,setprofileEl]=useState(null);
+  const openProfile=Boolean(profileEl)
+  const handleProfileOpen=(event)=>{
+    setprofileEl(event.currentTarget)
+  }
+  const handleProfileClose=()=>{
+    setprofileEl(null)
+  }
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -34,15 +53,10 @@ const Nav = () => {
     setAnchorEl(null);
   };
 
-  const [openProfile,setOpenProfile]=useState(false);
-  const handleOpenProfile=()=>{setOpenProfile(true)}
-  const handleCloseProfile=()=>{setOpenProfile((!openProfile))}
-
-
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
   const { currUser } = useContext(UserContext);
-  let isLoggedIn = true;
+  let isLoggedIn = false;
   if (window.localStorage.getItem("token")) isLoggedIn = true;
 
   useEffect(() => {
@@ -51,6 +65,7 @@ const Nav = () => {
     else setDisplayLogin("inline");
     if (pathname === "/sign-up" || isLoggedIn) setDisplaySignup("none");
     else setDisplaySignup("inline");
+    if(window.localStorage.getItem("token")) isLoggedIn=true
   }, [currUser, pathname, isLoggedIn]);
 
   const servicesStyles = {
@@ -66,6 +81,11 @@ const Nav = () => {
     },
     transition: "0.3s",
   };
+
+  const handleLogOut=(e)=>{
+    window.localStorage.removeItem('token')
+    navigate("/")
+  }
 
   return (
     <div>
@@ -107,11 +127,23 @@ const Nav = () => {
                     alignItems: "center",
                   }}
                 >
-                  <a href="/book-pet-sitting" style={servicesStyles}>
-                    {" "}
-                    <BookOnlineIcon fontSize="large" />
+                  {/* sitter modal */}
+                  <Petsitterform
+                    visible={showsitterModal}
+                    showsitterModal={showsitterModal}
+                    setsitterShowModal={setsitterShowModal}
+                  />
+
+                  <a
+                    href={Petsitterform}
+                    style={servicesStyles}
+                    onClick={() => setsitterShowModal(true)}
+                  >
+                    <BookOnlineIcon fontSize="large" sx={{color: '#006B5E', ":hover":{color: '#F7D65A', transform: 'rotate(35deg)', transition: 'all 0.15s ease-in-out'}}} />
                     Book Pet Sitter
                   </a>
+
+                  {/* Tracker modal */}
 
                   <AddTrackerModal
                     visible={showModal}
@@ -124,11 +156,22 @@ const Nav = () => {
                     style={servicesStyles}
                     onClick={() => setShowModal(true)}
                   >
-                    <ShareLocationIcon fontSize="large" />
+                    <ShareLocationIcon fontSize="large" sx={{color: '#006B5E', ":hover":{color: '#F7D65A', transform: 'rotate(35deg)', transition: 'all 0.15s ease-in-out'}}} />
                     Order A Tracker
                   </a>
-                  <a href="/book-pet-sitting" style={servicesStyles}>
-                    <PaidIcon fontSize="large" />
+
+                  {/* Payment modal */}
+                  <PaymentModal
+                    visible={showpaymentModal}
+                    showpaymentModal={showpaymentModal}
+                    setpaymentShowModal={setpaymentShowModal}
+                  />
+                  <a
+                    href={PaymentModal}
+                    style={servicesStyles}
+                    onClick={() => setpaymentShowModal(true)}
+                  >
+                    <PaidIcon fontSize="large" sx={{color: '#006B5E', ":hover":{color: '#F7D65A', transform: 'rotate(35deg)', transition: 'all 0.15s ease-in-out'}}} />
                     Payment
                   </a>
                 </Stack>
@@ -165,32 +208,46 @@ const Nav = () => {
                 Login
               </Button>
               {isLoggedIn ? (
-                 <ClickAwayListener onClickAway={handleCloseProfile}>
-                <div
-                  onClick={handleOpenProfile}
-                  className="profile-popover-origin"
-                  style={{position:"relative"}}
-                >
-                
-                 <Avatar
-                    sx={{
-                      "&:hover": {
-                        border: "3px solid black",
-                        transform: "scale(1.3)",
-                        transition: "0.2s",
-                      },
+                <>
+                  <Button
+                    id="basic-button"
+                    aria-controls={openProfile ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openProfile ? "true" : undefined}
+                    onClick={handleProfileOpen}
+                  >
+                    <Avatar
+                      sx={{
+                        "&:hover": {
+                          border: "3px solid black",
+                          transform: "scale(1.3)",
+                          transition: "0.2s",
+                        },
+                      }}
+                    >
+                      H
+                    </Avatar>
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={profileEl}
+                    open={openProfile}
+                    onClose={handleProfileClose}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
                     }}
                   >
-                    H
-                  </Avatar>
-                  {openProfile?<ProfileModal/>:null}
-                 
-                 
-                </div>
-                </ClickAwayListener>
-              ) : (
-                <></>
-              )}
+                    <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
+                    <MenuItem
+                      onClick={(e) => {
+                        navigate("/profile");
+                      }}
+                    >
+                      Profile
+                    </MenuItem>
+                  </Menu>
+                </>
+              ) : null}
             </Stack>
           </div>
         </section>

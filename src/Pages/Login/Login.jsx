@@ -85,6 +85,7 @@ function Login() {
                         isLoggedIn: true,
                       };
                       setCurrentUser(currentUserState);
+                      window.localStorage.setItem('token',response.data.accessToken)
                       navigate("/");
                     })
                     .catch((err) => {
