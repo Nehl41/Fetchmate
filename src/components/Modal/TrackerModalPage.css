@@ -71,3 +71,25 @@
 	border: 1px solid black;
 	border-radius: 3px;
 }
+
+.photo-album > img:hover{
+	mask-image: radial-gradient(rgb(0, 0, 0),transparent);
+	mask-border: 1px solid black;
+}
+
+.variant > img{
+	width: 55px;
+	height: 55px;
+	padding: 4px;
+    margin-inline-start: .7rem;
+}
+
+.variant > img:hover{
+	border: 1px solid black;
+	border-radius: 3px;	
+}
+
+.variant > img:active{
+	border: 1.25px solid black;
+	border-radius: 3px;
+}
