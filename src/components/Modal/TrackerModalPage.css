@@ -35,8 +35,9 @@
 
 .photo-main {
 	border-radius: 6px 6px 0 0;
-	background-color: #9be010;
-	background: radial-gradient(#e5f89e, #96e001);
+	background-color: grey;
+	background: radial-gradient(#387989, #6dd5ed);
+	width: 100%;
 }
 
 .controls {
@@ -70,4 +71,18 @@
     margin-inline-start: .7rem;
 	border: 1px solid black;
 	border-radius: 3px;
+}
+
+.variant>img{
+	width: 5vw;
+}
+
+.variant>img:hover{
+ transform: scale(1.05);
+ transition: 0.2s;
+}
+
+.variant>img:active{
+	transform: scale(0.9);
+
 }

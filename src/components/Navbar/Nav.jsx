@@ -10,13 +10,16 @@ import { ClickAwayListener, Menu, MenuItem, Typography } from "@mui/material";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
 import ProfileModal from "../ProfileModal/ProfileModal";
 import axios from "axios";
 
 const Nav = () => {
+
+  const navigate=useNavigate()
+
   const [showModal, setShowModal] = useState(false);
 
   const [displaySignup, setDisplaySignup] = useState("inline");
@@ -75,6 +78,7 @@ const Nav = () => {
 
   const handleLogOut=(e)=>{
     window.localStorage.removeItem('token')
+    navigate("/")
   }
 
   return (
@@ -203,6 +207,9 @@ const Nav = () => {
                 }}
                 >
                   <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
+                  <MenuItem onClick={(e)=>{
+                    navigate("/profile")
+                  }}>Profile</MenuItem>
                 </Menu>
                 </>
               ) : null}

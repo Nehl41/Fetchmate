@@ -6,9 +6,37 @@ import { useState } from "react";
 import { Typography } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import Petcollar from '../../assets/Image/petCollarsample.jpg'
 
-const prepsformodal = ({showModal , setShowModal}) => {
+// Importing Images
+import Petcollar from '../../assets/Image/petCollarsample.jpg'
+import brownCollar from '../../assets/Image/brownCollar.png'
+import blueCollar from '../../assets/Image/blueCollar.png'
+import darkBrownCollar from '../../assets/Image/darkBrownCollar.png'
+import purpleCollar from '../../assets/Image/purpleCollar.png'
+
+const Prepsformodal = ({showModal , setShowModal}) => {
+  const [currentImage,setCurrentImage]=useState(purpleCollar)
+
+  const handleImageChange=(e)=>{
+    const currentElement=e.target.getAttribute('alt')
+    switch (currentElement) {
+      case "purple":
+        setCurrentImage(purpleCollar)
+        break;
+      case "blue":
+        setCurrentImage(blueCollar)
+        break;
+      case "brown":
+        setCurrentImage(brownCollar)
+        break;
+      case "darkBrown":
+        setCurrentImage(darkBrownCollar)
+        break;
+      default:
+        break;
+    }
+  }
+
     return (
       <Rodal
         customMaskStyles={{
@@ -39,10 +67,10 @@ const prepsformodal = ({showModal , setShowModal}) => {
                       <ShareIcon />
                       <FavoriteBorderIcon />
                     </div>
-                    <img src={Petcollar} alt="Pet collar"></img>
+                    <img src={currentImage} alt="Pet collar"></img>
                   </div>
                   {/* Photo Album */}
-                  <div class="photo-album">
+                  {/* <div class="photo-album">
                       <img
                         src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
                         alt="green apple"
@@ -59,48 +87,52 @@ const prepsformodal = ({showModal , setShowModal}) => {
                         src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
                         alt="apple top"
                       ></img>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
 
             <div className="product__info">
               <div className="title">
-                <h1>Delicious Apples</h1>
+                <h1>GPS Collar</h1>
                 <h6>COD: 45999</h6>
               </div>
               <div className="price">
-                <h2>Rs. 7.93</h2>
+                <h2>Rs. 999</h2>
               </div>
               <div className="variant">
                 <h3>SELECT A COLOR</h3>
                 <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-                  alt="green apple"
+                  src={purpleCollar}
+                  alt="purple"
+                  onClick={handleImageChange}
                 ></img>
                 <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
-                  alt="yellow apple"
+                  src={darkBrownCollar}
+                  alt="darkBrown"
+                  onClick={handleImageChange}
                 ></img>
                 <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
-                  alt="orange apple"
+                  src={blueCollar}
+                  alt="blue"
+                  onClick={handleImageChange}
                 ></img>
                 <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
-                  alt="red apple"
+                  src={brownCollar}
+                  alt="brown"
+                  onClick={handleImageChange}
                 ></img>
               </div>
               <div className="description">
-                <h3>BENEFITS</h3>
+                <h3>Features</h3>
                 <ul>
-                  <li>Apples are nutricious</li>
-                  <li>Apples may be good for weight loss</li>
-                  <li>Apples may be good for bone health</li>
-                  <li>They're linked to a lowest risk of diabetes</li>
+                  <li>Get Pet Location</li>
+                  <li>Easy Setup</li>
+                  <li>Suits all Fur Types</li>
+                  <li>Already Linked With Fetchmate</li>
                 </ul>
               </div>
-              <button className="buy--btn">ADD TO CART</button>
+              <button className="buy--btn">Buy Now</button>
             </div>
           </div>
         </div>
@@ -108,4 +140,4 @@ const prepsformodal = ({showModal , setShowModal}) => {
     );
 }
 
-export default prepsformodal;
+export default Prepsformodal;

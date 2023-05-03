@@ -23,6 +23,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AddPetSection from "./components/AddPetSitter/AddPetSection";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 
 
 function App() {
@@ -55,6 +56,9 @@ function App() {
             <Route path="def" element={<OurGoal />} />
             <Route path="faqs" element={<Faqs />} />
             <Route path="developers" element={<Developers />} />
+          </Route>
+          <Route element={<ProtectedRoutes/>}>
+            <Route path="/profile" element={<UserProfile/>}></Route>
           </Route>
         </Routes>)}
       </div>
