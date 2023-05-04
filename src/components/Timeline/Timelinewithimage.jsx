@@ -1,7 +1,9 @@
 import './Timelinewithimage.css';
 import Timeline from './Timeline';
+import { useNavigate } from 'react-router-dom';
 
 export default () => {
+  const navigate=useNavigate()
     return(
         <div className='just-wrapper'>
       
@@ -15,7 +17,7 @@ export default () => {
         <div className="timeline-image-block-container">
         <h4 className='h4style'>How to get started</h4>
           <Timeline/>
-        <button className='get-started-btn'>Get Started</button>
+        <button onClick={()=>navigate("/sign-up")} className='get-started-btn'>Get Started</button>
         </div>
         </div>
     );

@@ -179,32 +179,13 @@ const UserProfile = () => {
         </Grid>
       </div>
       <div className="profile-information">
-<<<<<<< HEAD
-        <div class="our-team">
-          <div class="picture">
-            <img
-              class="img-fluid"
-              src="https://picsum.photos/130/130?image=1027"
-            />
-          </div>
-          <div class="team-content">
-            <h3 class="name">{currentUser.name}</h3>
-            <h4 class="title">{currentUser.role}</h4>
-          </div>
-          <ul class="social">
-            <li>
-              <a href="https://codepen.io/collection/XdWJOQ/">
-                <Instagram />
-              </a>
-            </li>
-          </ul>
-=======
       <div class="our-team">
         <div class="picture">
           <img class="img-fluid" src="https://picsum.photos/130/130?image=1027" alt="someimage"/>
->>>>>>> bca6f8a54dd166387ae649cdb444ed1c18f1fd23
+          <Typography>{currentUser.name}</Typography>
         </div>
       </div>
+    </div>
     </div>
   );
 };

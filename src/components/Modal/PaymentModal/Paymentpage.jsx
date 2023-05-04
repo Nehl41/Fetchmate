@@ -4,12 +4,12 @@ import Rodal from "rodal";
 import { useState } from 'react';
 
 
-const paymentmodal = ({showpaymentModal , setpaymentShowModal}) => {
-  // const [paymentMode, setPaymentMode] = useState('UPI'); // Default to UPI mode
-  // const [cardType, setCardType] = useState('');
-  // const [cardNumber, setCardNumber] = useState('');
-  // const [mobileNumber, setMobileNumber] = useState('');
-  // const [upiMode, setUpiMode] = useState('PhonePe'); // Default to PhonePe UPI mode
+const Paymentmodal = ({showpaymentModal , setpaymentShowModal}) => {
+  const [paymentMode, setPaymentMode] = useState('UPI'); // Default to UPI mode
+  const [cardType, setCardType] = useState('');
+  const [cardNumber, setCardNumber] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [upiMode, setUpiMode] = useState('PhonePe'); // Default to PhonePe UPI mode
 
   const handlePaymentModeChange = (e) => {
     setPaymentMode(e.target.value);
@@ -114,4 +114,4 @@ const paymentmodal = ({showpaymentModal , setpaymentShowModal}) => {
     );
 }
 
-export default paymentmodal;
+export default Paymentmodal;
