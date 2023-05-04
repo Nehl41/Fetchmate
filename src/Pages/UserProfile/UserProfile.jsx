@@ -179,6 +179,7 @@ const UserProfile = () => {
         </Grid>
       </div>
       <div className="profile-information">
+<<<<<<< HEAD
         <div class="our-team">
           <div class="picture">
             <img
@@ -197,6 +198,11 @@ const UserProfile = () => {
               </a>
             </li>
           </ul>
+=======
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027" alt="someimage"/>
+>>>>>>> bca6f8a54dd166387ae649cdb444ed1c18f1fd23
         </div>
       </div>
     </div>

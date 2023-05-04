@@ -8,7 +8,6 @@ import ShareIcon from '@mui/icons-material/Share';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 // Importing Images
-import Petcollar from '../../assets/Image/petCollarsample.jpg'
 import brownCollar from '../../assets/Image/brownCollar.png'
 import blueCollar from '../../assets/Image/blueCollar.png'
 import darkBrownCollar from '../../assets/Image/darkBrownCollar.png'
@@ -69,25 +68,6 @@ const Prepsformodal = ({showModal , setShowModal}) => {
                     </div>
                     <img src={currentImage} alt="Pet collar"></img>
                   </div>
-                  {/* Photo Album */}
-                  {/* <div class="photo-album">
-                      <img
-                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-                        alt="green apple"
-                      ></img>
-                      <img
-                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png"
-                        alt="half apple"
-                      ></img>
-                      <img
-                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png"
-                        alt="green apple"
-                      ></img>
-                      <img
-                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
-                        alt="apple top"
-                      ></img>
-                  </div> */}
                 </div>
               </div>
             </div>
