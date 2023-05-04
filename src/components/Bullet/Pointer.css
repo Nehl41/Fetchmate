@@ -6,7 +6,6 @@
 }
 
 .pointer:hover{
-  background-color: #006b5e;
   transform: scale(1.2);
 }
 

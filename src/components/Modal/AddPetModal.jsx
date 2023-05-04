@@ -59,7 +59,7 @@ const AddPetModal = ({ showModal, setShowModal }) => {
   const inputChangeHandler = (e) => {
     const value = e.target.value;
     const currPet = { ...petDetails };
-    currPet["parentId"] = userData;
+    currPet["parentId"] = userData.currentUSer._id;
     currPet[e.target.getAttribute("name")] = value;
     setPetDetails(currPet);
     console.log(currPet);
@@ -99,7 +99,24 @@ const AddPetModal = ({ showModal, setShowModal }) => {
         }}
         id="pet-Modal-form"
       >
+        
         <Box sx={{ padding: 5 }}>
+        <form onSubmit={async (e)=>{
+          const formData=new FormData()
+          formData.append("name",petDetails.name)
+          formData.append("DOB",petDetails.birthDate.toString())
+          formData.append("petType",petDetails.petType)
+          formData.append("breed",petDetails.breed)
+          formData.append("medical",petDetails.medical)
+          const response=await axios({
+            url:"http://localhost:3500/api/v1/pets/add-pet",
+            method:"POST",
+            headers:{
+              "Content-Type":"multipart/form-data"
+            },
+            data:formData
+          })
+        }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={2}>
               <InputLabel
@@ -229,32 +246,7 @@ const AddPetModal = ({ showModal, setShowModal }) => {
             <Grid item xs={12} sm={5} />
             <Grid item xs={12} sm={4}>
               <Button
-                onClick={async (e) => {
-                  e.preventDefault();
-                  const formData = new FormData();
-                  formData.append("petDetails", petDetails);
-                  formData.append("medical", medical);
-                  try {
-                    const response = await axios({
-                      method: "POST",
-                      url: "http://localhost:3500/api/v1/pets/add-pet",
-                      data: formData,
-                      headers: {
-                        "Content-Type": "multipart/form-data",
-                        Authorization: `Bearer ${window.localStorage.getItem(
-                          "token"
-                        )}`,
-                      },
-                    });
-
-                    console.log(response);
-
-                    window.localStorage.setItem("MyPet",JSON.stringify(petDetails))
-
-                  } catch (error) {
-                    console.log(error);
-                  }
-                }}
+                type="submit"
                 variant="contained"
                 sx={{ color: "#ff781f" }}
               >
@@ -262,7 +254,9 @@ const AddPetModal = ({ showModal, setShowModal }) => {
               </Button>
             </Grid>
           </Grid>
+          </form>
         </Box>
+        
       </div>
     </Rodal>
   );
