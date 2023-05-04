@@ -48,7 +48,7 @@ function Footer() {
             className="akshada"
           ></img>
           <h6>
-            Akshadha <br /> Ese-hi-chalne do-developer
+            Akshadha <br /> Documentation and Paper work
           </h6>
         </div>
       </div>

@@ -1,7 +1,6 @@
 .card-line{
     justify-content: center;
-    width: inherit;
-    margin-bottom: .4rem;
+    margin-bottom: .5rem;
 }
 
 .card-line > img{
