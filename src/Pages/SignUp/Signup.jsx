@@ -104,6 +104,7 @@ const Signup = () => {
                     name="email"
                     id="form3"
                     type="email"
+                    value={user.email}
                     onChange={(e) => inputChangeHandler(e)}
                   />
 

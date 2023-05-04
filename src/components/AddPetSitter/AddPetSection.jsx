@@ -12,6 +12,8 @@ import { useEffect } from "react";
 const AddPetSitter = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const petDetails=window.localStorage.getItem("MyPet")
+
   return (
     <div className="parent-bottom-container d-flex justify-content-center">
       <h2 style={{ textAlign: "center", color: "black" }}>Your Pets</h2>
@@ -22,7 +24,7 @@ const AddPetSitter = () => {
           petImage={
             "https://img.freepik.com/free-photo/adorable-brown-white-basenji-dog-smiling-giving-high-five-isolated-white_346278-1657.jpg?size=626&ext=jpg&ga=GA1.1.793567355.1673874082&semt=robertav1_2_sidr"
           }
-          petName={"Pet Name"}
+          petName={""}
           petUniqueId={"Pet's Fetchmate unique id"}
         />
 

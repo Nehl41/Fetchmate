@@ -12,38 +12,59 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
+import userData from "../../utils/getUserData";
+
 import { MDBCardImage, MDBInput } from "mdb-react-ui-kit";
 import CatFace from "../../assets/Image/CatFace.gif";
 import DogFace from "../../assets/Image/DogFace.gif";
 import DefaultPet from "../../assets/Image/defaultPet.gif";
+import axios from "axios";
+import { useSearchParams } from "react-router-dom";
 
 const AddPetModal = ({ showModal, setShowModal }) => {
   const [formGif, setFormGif] = useState(DefaultPet);
   const [animalType, setAnimalType] = useState("Cat");
-
+  const [petDetails, setPetDetails] = useState({});
+  const [medical, setMedical] = useState({});
+  
   const handleChange = (e) => {
     const currentContent = e.target.value;
     setAnimalType(currentContent);
+    const currPet = { ...petDetails };
+    currPet["petType"] = currentContent;
+    currPet["parentId"] = userData.currentUSer._id;
+    setPetDetails(currPet);
+
     if (currentContent === "Dog") setFormGif(DogFace);
     else if (currentContent === "Cat") setFormGif(CatFace);
   };
   const getRandomAnimation = () => {
     const animationTypes = [
-      "zoom",
+      // "zoom",
       "fade",
-      "flip",
-      "door",
-      "rotate",
-      "slideUp",
-      "slideDown",
-      "slideLeft",
-      "slideRight",
+      // "flip",
+      // "door",
+      // "rotate",
+      // "slideUp",
+      // "slideDown",
+      // "slideLeft",
+      // "slideRight",
     ];
 
     const randomIndex = Math.floor(Math.random() * animationTypes.length);
 
     return animationTypes[randomIndex];
   };
+
+  const inputChangeHandler = (e) => {
+    const value = e.target.value;
+    const currPet = { ...petDetails };
+    currPet["parentId"] = userData;
+    currPet[e.target.getAttribute("name")] = value;
+    setPetDetails(currPet);
+    console.log(currPet);
+  };
+
   return (
     <Rodal
       animation={getRandomAnimation()}
@@ -62,7 +83,7 @@ const AddPetModal = ({ showModal, setShowModal }) => {
       visible={showModal}
       onClose={() => setShowModal(false)}
     >
-      <Typography variant="h4" >Add Your Pet</Typography>
+      <Typography variant="h4">Add Your Pet</Typography>
       <MDBCardImage
         src={formGif}
         alt="Sample photo"
@@ -95,10 +116,11 @@ const AddPetModal = ({ showModal, setShowModal }) => {
               <TextField
                 required
                 id="title"
-                name="title"
+                name="name"
                 label="e.g. Jackie Bruno Tommy"
                 fullWidth
                 size="small"
+                onChange={inputChangeHandler}
                 autoComplete="off"
                 variant="outlined"
               />
@@ -123,6 +145,7 @@ const AddPetModal = ({ showModal, setShowModal }) => {
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
+                  name="petType"
                   value={animalType}
                   label=""
                   onChange={handleChange}
@@ -148,10 +171,11 @@ const AddPetModal = ({ showModal, setShowModal }) => {
               <TextField
                 required
                 id="author"
-                name="author"
+                name="breed"
                 label="e.g. GermanShepherd Pomeranian "
                 fullWidth
                 size="small"
+                onChange={inputChangeHandler}
                 autoComplete="off"
                 variant="outlined"
               />
@@ -175,6 +199,7 @@ const AddPetModal = ({ showModal, setShowModal }) => {
                 size="md"
                 id="form4"
                 name="birthDate"
+                onChange={inputChangeHandler}
                 type="date"
               />
             </Grid>
@@ -194,29 +219,45 @@ const AddPetModal = ({ showModal, setShowModal }) => {
                 class="form-control form-control-lg"
                 id="formFileLg"
                 type="file"
-              />
-            </Grid>
-            <Grid item xs={12} sm={2}>
-              <InputLabel
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  fontWeight: 700,
+                name="medical"
+                onChange={(e) => {
+                  setMedical(e.target.files[0]);
                 }}
-              >
-                Photo
-              </InputLabel>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <input
-                class="form-control form-control-lg"
-                id="formFileLg"
-                type="file"
               />
             </Grid>
+
             <Grid item xs={12} sm={5} />
             <Grid item xs={12} sm={4}>
-              <Button variant="contained" sx={{ color: "#ff781f" }}>
+              <Button
+                onClick={async (e) => {
+                  e.preventDefault();
+                  const formData = new FormData();
+                  formData.append("petDetails", petDetails);
+                  formData.append("medical", medical);
+                  try {
+                    const response = await axios({
+                      method: "POST",
+                      url: "http://localhost:3500/api/v1/pets/add-pet",
+                      data: formData,
+                      headers: {
+                        "Content-Type": "multipart/form-data",
+                        Authorization: `Bearer ${window.localStorage.getItem(
+                          "token"
+                        )}`,
+                      },
+                    });
+
+                    console.log(response);
+
+                    window.localStorage.setItem("MyPet",JSON.stringify(petDetails))
+
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }}
+                variant="contained"
+                sx={{ color: "#ff781f" }}
+              >
                 Save
               </Button>
             </Grid>

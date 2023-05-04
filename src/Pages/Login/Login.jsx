@@ -86,6 +86,8 @@ function Login() {
                       };
                       setCurrentUser(currentUserState);
                       window.localStorage.setItem('token',response.data.accessToken)
+                      const userStringified=JSON.stringify(currentUserState)
+                      window.localStorage.setItem('userData',userStringified)
                       navigate("/");
                     })
                     .catch((err) => {
