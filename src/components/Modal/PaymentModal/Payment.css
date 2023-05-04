@@ -1,0 +1,10 @@
+.card-line{
+    justify-content: center;
+    width: inherit;
+    margin-bottom: .4rem;
+}
+
+.card-line > img{
+    height: 3rem;
+    margin-inline:.3rem ;
+}
