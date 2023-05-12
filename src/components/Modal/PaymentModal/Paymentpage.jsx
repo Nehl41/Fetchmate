@@ -116,22 +116,23 @@ const Paymentmodal = ({showpaymentModal , setpaymentShowModal}) => {
              </label>
 
              {/* Card UI  */}
-             <div style={{ border: "4px solid black", padding: "5px", }}>
-               <div class="mt-4 mx-4">
-                 <div class="text-center">
+             <div style={{ border: "3px solid black", margin: "1rem",width: "100%",paddingBottom:"1.5rem",borderRadius: "5%"}}>
+               <div className="mt-4 mx-4">
+                 <div className="text-center">
                    <h7>Credit card</h7>{" "}
                  </div>
-                 <div class="form mt-3">
-                   <div class="inputbox">
+                 <div className="form mt-3">
+                   <div className="inputbox">
+                     <h7>Cardholder Name</h7>{" "}
                      <input
                        type="text"
                        name="name"
                        class="form-control"
                        required="required"
                      />
-                     <h7>Cardholder Name</h7>{" "}
                    </div>
-                   <div class="inputbox">
+                   <div className="inputbox">
+                     <h7>Card Number</h7> <i className="fa fa-eye"></i>{" "}
                      <input
                        type="text"
                        name="name"
@@ -140,10 +141,9 @@ const Paymentmodal = ({showpaymentModal , setpaymentShowModal}) => {
                        class="form-control"
                        required="required"
                      />
-                     <h7>Card Number</h7> <i class="fa fa-eye"></i>{" "}
                    </div>
-                   <div class="d-flex flex-row">
-                       <h7>Expiration Date</h7>
+                   <div className="d-flex">
+                      <h7>Expiration Date</h7>
                      <div class="inputbox">
                        <input
                          type="text"
