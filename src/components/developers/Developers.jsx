@@ -1,5 +1,5 @@
 import Card from "../Card/Card";
-import Nehal from '../../assets/Image/nehal.jpg'
+import Nehal from '../../assets/Image/nehal.png'
 import Swayam from '../../assets/Image/swayam.jpg'
 export default () => {
   return (
