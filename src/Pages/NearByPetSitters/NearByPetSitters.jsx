@@ -14,7 +14,7 @@ const NearByPetSitters=()=>{
 
     const getNearby=async ()=>{
         const response=await axios({
-            url:"http://localhost:3500/api/v1/user/nearby",
+            url:"https://fetchmatebackend.onrender.com/api/v1/user/nearby",
             method:"GET",
             headers:{
               Authorization:`Bearer ${window.localStorage.getItem("token")}`

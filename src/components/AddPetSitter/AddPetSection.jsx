@@ -24,7 +24,7 @@ const AddPetSitter = () => {
 
   const getMyPets=async ()=>{
     const response=await axios({
-      url:"http://localhost:3500/api/v1/pets/show-mypets",
+      url:"https://fetchmatebackend.onrender.com/api/v1/pets/show-mypets",
       method:"POST",
       headers:{
         Authorization:`Bearer ${window.localStorage.getItem("token")}`

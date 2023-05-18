@@ -21,7 +21,7 @@ const Petsitterform = ({ showsitterModal, setsitterShowModal }) => {
 
   const getPets = async () => {
     const response = await axios({
-      url: "http://localhost:3500/api/v1/pets/show-mypets",
+      url: "https://fetchmatebackend.onrender.com/api/v1/pets/show-mypets",
       method: "POST",
       data: {
         id: JSON.parse(window.localStorage.getItem("userData")).currentUSer._id,
@@ -37,7 +37,7 @@ const Petsitterform = ({ showsitterModal, setsitterShowModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios({
-      url: "http://localhost:3500/api/v1/user/submit-request",
+      url: "https://fetchmatebackend.onrender.com/api/v1/user/submit-request",
       method: "POST",
       headers:{
         Authorization:`Bearer ${window.localStorage.getItem("token")}`
@@ -98,7 +98,7 @@ const Petsitterform = ({ showsitterModal, setsitterShowModal }) => {
           onChange={(e) => setDatesRequested(e.target.value)}
         />
         <label htmlFor="pets">Select Pet:</label>
-        <select name="pets" id="pets" onChange={(e)=>{
+        <select name="pets" id="pets" defaultValue={myPets[0]._id} onClick={(e)=>{
           console.log(`Selected Pet:${e.target.value}`);
     setPetId(e.target.value)
         }}>

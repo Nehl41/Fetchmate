@@ -240,7 +240,7 @@ const Signup = () => {
                         console.log("Button Clicked!");
                         axios({
                           method: "POST",
-                          url: "http://localhost:3500/api/v1/user/add",
+                          url: "https://fetchmatebackend.onrender.com/api/v1/user/add",
                           data: user,
                         })
                           .then((response) =>

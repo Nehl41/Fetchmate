@@ -1,34 +1,22 @@
-import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
+import { Grid, TextField, Typography } from "@mui/material";
+
 import "./UserProfile.css";
 
-import {
-  Instagram,
-  MailOutlineSharp,
-  Send,
-  Verified,
-  VerifiedOutlined,
-} from "@mui/icons-material";
+import ManHi from '../../assets/Image/manHi.gif'
+import WomanHi from '../../assets/Image/womanHi.gif'
 import { useState } from "react";
-import Rodal from "rodal";
-import axios from "axios";
 import { useEffect } from "react";
 
 const UserProfile = () => {
-  const [userData,setUserData]=useState({currentUSer:{name:"Swayam"}})
-  const [showModal, setShowModal] = useState(false);
-  const isEmailVerified = false;
-  const currentUser=userData.currentUSer;
-  const fullname = userData.currentUSer.name;
-  const firstName = fullname.split(" ")[0];
-  const lastName=fullname.split(" ")[1];
+  const [currentUser,setCurrentUser]=useState({name:"Default User"})
   
 
   useEffect(()=>{
-    if(window.localStorage.getItem("userData")){
-      console.log(window.localStorage.getItem("userData"));
-      setUserData(JSON.parse(window.localStorage.getItem("userData")))
-    }
+    // if(window.localStorage.getItem("userData")){
+    //   console.log(window.localStorage.getItem("userData"));
+      setCurrentUser(JSON.parse(window.localStorage.getItem("userData")).currentUSer)
+      console.log(currentUser);
+    // }
   },[])
 
   return (
@@ -44,7 +32,8 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={firstName}
+              defaultValue={currentUser.name}
+              value={currentUser.name.split(" ")[0]}
             />
           </Grid>
           <Grid item xs={6}>
@@ -55,7 +44,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={lastName}
+              value={currentUser.name.split(" ")[1]}
             />
           </Grid>
           <Grid item xs={6}>
@@ -65,7 +54,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={currentUser.birthDate}
+              value={currentUser.birthDate}
             />
           </Grid>
           <Grid item xs={6}>
@@ -75,7 +64,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={currentUser.sex}
+             value={currentUser.sex}
             />
           </Grid>
           <Grid item xs={6}>
@@ -87,7 +76,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={currentUser.email}
+             value={currentUser.email}
             />
           </Grid>
           <Grid item xs={6}>
@@ -98,7 +87,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={currentUser.phone}
+              value={currentUser.phone}
             />
           </Grid>
         </Grid>
@@ -111,7 +100,7 @@ const UserProfile = () => {
                 readOnly: true,
               }}
               label="City"
-              defaultValue={currentUser.city}
+              value={currentUser.city}
             />
           </Grid>
           <Grid item xs={6}>
@@ -121,7 +110,7 @@ const UserProfile = () => {
                 readOnly: true,
               }}
               label="State"
-              defaultValue={"Madhya Pradesh"}
+              value={currentUser.state}
             />
           </Grid>
           <Grid item xs={6}>
@@ -131,7 +120,7 @@ const UserProfile = () => {
                 readOnly: true,
               }}
               label="Country"
-              defaultValue={currentUser.country}
+             value={currentUser.country}
             />
           </Grid>
           <Grid item xs={6}>
@@ -141,7 +130,7 @@ const UserProfile = () => {
                 readOnly: true,
               }}
               label="Pin Code"
-              defaultValue={"452005"}
+              value={"452005"}
             />
           </Grid>
         </Grid>
@@ -149,7 +138,7 @@ const UserProfile = () => {
       <div className="profile-information">
       <div class="our-team">
         <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027" alt="someimage"/>
+          <img class="img-fluid" src={(currentUser.sex=="Female")?WomanHi:ManHi} alt="someimage"/>
           <Typography>{currentUser.name}</Typography>
         </div>
       </div>

@@ -31,7 +31,7 @@ const CheckRequest = () => {
 
   const getUserPets = async () => {
     const response = await axios({
-      url: "http://localhost:3500/api/v1/pets/show-one-pet",
+      url: "https://fetchmatebackend.onrender.com/api/v1/pets/show-one-pet",
       method: "POST",
       headers: {
         Authorization: `Bearer ${window.localStorage.getItem("token")}`,
@@ -41,7 +41,7 @@ const CheckRequest = () => {
     setPetData(response.data);
     console.log(response.data);
     const userResponse = await axios({
-      url: "http://localhost:3500/api/v1/user/one-user",
+      url: "https://fetchmatebackend.onrender.com/api/v1/user/one-user",
       method: "POST",
       headers: {
         Authorization: `Bearer ${window.localStorage.getItem("token")}`,
@@ -84,8 +84,9 @@ const CheckRequest = () => {
             {(currentRequest.status=="Pending")?<>
             <CCardLink
               onClick={async (e) => {
+                setRequestStatus("Accepted")
                 await axios({
-                  url: "http://localhost:3500/api/v1/user/accept-request",
+                  url: "https://fetchmatebackend.onrender.com/api/v1/user/accept-request",
                   method: "POST",
                   data:{id:JSON.parse(window.localStorage.getItem("userData")).currentUSer._id}
                   
@@ -97,8 +98,9 @@ const CheckRequest = () => {
             </CCardLink>
             <CCardLink
               onClick={async (e) => {
+                setRequestStatus("Rejected")
                 await axios({
-                  url: "http://localhost:3500/api/v1/user/reject-request",
+                  url: "https://fetchmatebackend.onrender.com/api/v1/user/reject-request",
                   method: "POST",
                   data:{id:JSON.parse(window.localStorage.getItem("userData")).currentUSer._id}
                 });
