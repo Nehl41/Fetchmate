@@ -24,6 +24,9 @@ import { useState, useEffect } from "react";
 import AddPetSection from "./components/AddPetSitter/AddPetSection";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import UserProfile from "./Pages/UserProfile/UserProfile";
+import NearByPetSitters from "./Pages/NearByPetSitters/NearByPetSitters";
+import CurrentRequests from "./Pages/CurrentRequests/CurrentRequests";
+import CheckRequest from "./Pages/CheckRequests/CheckRequests";
 
 
 function App() {
@@ -48,6 +51,7 @@ function App() {
               <Route path="add-pet" element={<AddPetSection />}></Route>
             </Route>
           </Route>
+        <Route path="/CheckRequest" element={<CheckRequest/>} />
 
           <Route path="/pet-lover" element={<PetLover />}></Route>
           <Route path="/sign-up" element={<Signup />}></Route>
@@ -57,6 +61,8 @@ function App() {
             <Route path="faqs" element={<Faqs />} />
             <Route path="developers" element={<Developers />} />
           </Route>
+          <Route path="/near-by-pet-sitters" element={<NearByPetSitters/>}/>
+          <Route path="/current-requests" element={<CurrentRequests/>}/>
           <Route element={<ProtectedRoutes/>}>
             <Route path="/profile" element={<UserProfile/>}></Route>
           </Route>

@@ -9,6 +9,7 @@ import AddTrackerModal from "../../components/Modal/TrackerModalPage";
 import Petsitterform from "../../components//Modal/Petsitterform/Petsitterform"
 import PaymentModal from "../../components//Modal/PaymentModal/Paymentpage"
 import { ClickAwayListener, Menu, MenuItem, Typography } from "@mui/material";
+// import userData from "../../utils/getUserData";
 
 import { Popover, Stack, Avatar } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
@@ -34,6 +35,8 @@ const Nav = () => {
 
   const { pathname } = useLocation();
 
+  const [displayCurrentRequests,setCurrentRequests]=useState()
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [profileEl,setprofileEl]=useState(null);
@@ -57,16 +60,26 @@ const Nav = () => {
   const id = open ? "simple-popover" : undefined;
   const { currUser } = useContext(UserContext);
   let isLoggedIn = false;
+  let firstLetter="S"
   if (window.localStorage.getItem("token")) isLoggedIn = true;
 
+  const [userData,setUserData]=useState({currentUSer:{name:"Swayam"}})
+
   useEffect(() => {
-    console.log(`Current User:${currUser}`);
     if (pathname === "/login" || isLoggedIn) setDisplayLogin("none");
     else setDisplayLogin("inline");
     if (pathname === "/sign-up" || isLoggedIn) setDisplaySignup("none");
     else setDisplaySignup("inline");
-    if(window.localStorage.getItem("token")) isLoggedIn=true
+    if(window.localStorage.getItem("token")) {
+      isLoggedIn=true
+      firstLetter = userData.currentUSer.name.charAt(0);
+    }
+    if(window.localStorage.getItem("userData")){
+      setUserData(JSON.parse(window.localStorage.getItem("userData")))
+    }
   }, [currUser, pathname, isLoggedIn]);
+
+  
 
   const servicesStyles = {
     display: "flex",
@@ -84,6 +97,7 @@ const Nav = () => {
 
   const handleLogOut=(e)=>{
     window.localStorage.removeItem('token')
+    window.localStorage.removeItem('userData')
     navigate("/")
   }
 
@@ -184,6 +198,8 @@ const Nav = () => {
               className="Search_bar"
               type="search"
               placeholder="Search"
+              readOnly
+              onClick={(e)=>navigate('/near-by-pet-sitters')}
             ></input>
             <Stack spacing={2} direction={"row"}>
               <Button
@@ -207,6 +223,7 @@ const Nav = () => {
               >
                 Login
               </Button>
+            
               {isLoggedIn ? (
                 <>
                   <Button
@@ -224,8 +241,8 @@ const Nav = () => {
                           transition: "0.2s",
                         },
                       }}
-                    >
-                      H
+                    >{firstLetter = userData.currentUSer.name.charAt(0)}
+                      {firstLetter}
                     </Avatar>
                   </Button>
                   <Menu
@@ -245,6 +262,8 @@ const Nav = () => {
                     >
                       Profile
                     </MenuItem>
+                    <MenuItem onClick={(e)=>navigate("/CheckRequest")}>Check Request</MenuItem>
+                    {}
                   </Menu>
                 </>
               ) : null}

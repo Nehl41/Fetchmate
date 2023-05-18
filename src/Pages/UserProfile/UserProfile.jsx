@@ -1,6 +1,7 @@
 import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import "./UserProfile.css";
+
 import {
   Instagram,
   MailOutlineSharp,
@@ -10,16 +11,25 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 import Rodal from "rodal";
-import userData from "../../utils/getUserData";
+import axios from "axios";
+import { useEffect } from "react";
 
 const UserProfile = () => {
+  const [userData,setUserData]=useState({currentUSer:{name:"Swayam"}})
   const [showModal, setShowModal] = useState(false);
   const isEmailVerified = false;
   const currentUser=userData.currentUSer;
   const fullname = userData.currentUSer.name;
   const firstName = fullname.split(" ")[0];
   const lastName=fullname.split(" ")[1];
-  console.log(`User Data : ${userData}`);
+  
+
+  useEffect(()=>{
+    if(window.localStorage.getItem("userData")){
+      console.log(window.localStorage.getItem("userData"));
+      setUserData(JSON.parse(window.localStorage.getItem("userData")))
+    }
+  },[])
 
   return (
     <div className="profile-container">
@@ -55,7 +65,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={currentUser.createdAt}
+              defaultValue={currentUser.birthDate}
             />
           </Grid>
           <Grid item xs={6}>
@@ -65,7 +75,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={"Female"}
+              defaultValue={currentUser.sex}
             />
           </Grid>
           <Grid item xs={6}>
@@ -76,48 +86,6 @@ const UserProfile = () => {
               
               InputProps={{
                 readOnly: true,
-                endAdornment: (
-                  <InputAdornment position="end">
-                    {isEmailVerified ? (
-                      <Verified />
-                    ) : (
-                      <div
-                        onClick={(e) => {
-                          setShowModal(true);
-                          setTimeout(() => setShowModal(false), 2000);
-                        }}
-                        className="email-verifier"
-                      >
-                        <MailOutlineSharp
-                          sx={{
-                            "&:hover": {
-                              transform: "scale(1.1)",
-                            },
-                            "&:active": {
-                              transform: "scale(0.8)",
-                            },
-                          }}
-                        />
-                        <Rodal
-                          customStyles={{
-                            padding: "2rem",
-                            minHeight: "5vh",
-                          }}
-                          visible={showModal}
-                          onClose={() => {
-                            setShowModal(false);
-                            console.log(`Modal Close:${showModal}`);
-                          }}
-                        >
-                          <Typography variant="h5">
-                            Verification Mail Has Been Sent!
-                          </Typography>
-                          <Send sx={{ fill: "lightgreen", height: "5vh" }} />
-                        </Rodal>
-                      </div>
-                    )}
-                  </InputAdornment>
-                ),
               }}
               defaultValue={currentUser.email}
             />
@@ -130,7 +98,7 @@ const UserProfile = () => {
               InputProps={{
                 readOnly: true,
               }}
-              defaultValue={"7477252235"}
+              defaultValue={currentUser.phone}
             />
           </Grid>
         </Grid>
@@ -163,7 +131,7 @@ const UserProfile = () => {
                 readOnly: true,
               }}
               label="Country"
-              defaultValue={"India"}
+              defaultValue={currentUser.country}
             />
           </Grid>
           <Grid item xs={6}>

@@ -108,6 +108,7 @@ const AddPetModal = ({ showModal, setShowModal }) => {
           formData.append("petType",petDetails.petType)
           formData.append("breed",petDetails.breed)
           formData.append("medical",petDetails.medical)
+          formData.append("parentId",userData.currentUSer._id)
           const response=await axios({
             url:"http://localhost:3500/api/v1/pets/add-pet",
             method:"POST",
